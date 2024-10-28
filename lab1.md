@@ -46,3 +46,5 @@ Hệ thống Payroll dựa trên kiến trúc MVC sẽ gồm các thành phần 
 - Controller điều hướng các yêu cầu từ View đến Model, xử lý logic nghiệp vụ như tính lương và tạo báo cáo.
 
   Kiến trúc MVC giúp hệ thống Payroll dễ mở rộng, bảo trì, và đảm bảo tính tách biệt giữa các thành phần, giúp tối ưu hóa hiệu quả hoạt động và tăng tính linh hoạt khi cần mở rộng chức năng.
+
+![This is a class diagram](https://www.planttext.com/api/plantuml/png/d5JRIWCn47tlLmpxLCMAVLr411KKL4G5dzFDs0PpgScaKCGlyy5FyXTCsYGjQKl5mfRkcJCxSqxEzkVh-zmHi-ILx7MIEGTNQYhD714-UX0-0y04tF0MXAQ4QgQmXIUoGeyJD6LpXPhka2Q6LpN6kKNdAXGL4xB2I2ZicEM1UoiSdJwd-xD57UAJCjJFt1OoTD32p0ZU--mbEG_BfOeQfepNr08tVYJn3vkdsYMZe3T-9ppOHdubQ7sWDLBkiM_473unoUoyMcLYl7KlnhuXhogTKKeu9un-NEooLWJecEoy37WOtp-eYcFKQ9UrA2NMqyyDdowCfhW-sYG0mEAxHqUvkTAJ3LzojI7nEiyHwYVlohYDqyd7LjpYjSsx_J0pj340rv5HUpLXTeptNetGRXvHdhf5hFCZ9QW4h19x1BiJj-ptqwZWF_rXk_BgDSC61WDeJewF3viIuHOcpC7PBbhnieNmMcaArrRsi2aPZKpDnXXv6TirEuSeSQkmh3sy36n3P1U4lIshVSBUOKf7iMNBCUqTSuwQn_-oNm000F__0m00)
