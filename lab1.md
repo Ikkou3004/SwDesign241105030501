@@ -24,6 +24,7 @@ Các lớp phân tích (Analysis Classes)
 - Payment: Đơn vị giao dịch thanh toán chứa chi tiết về số tiền và phương thức thanh toán.
 - Payroll: Quản lý chi tiết lương cho từng nhân viên, bao gồm xử lý lương theo thời gian và hoa hồng.
 - PaymentController: Điều khiển các thao tác liên quan đến thanh toán, nhận yêu cầu từ người dùng và chuyển đổi lương đã tính toán đến phương thức thanh toán được chọn.
+![This is a class diagram](https://www.planttext.com/api/plantuml/png/Z5BDJiCm3BxtAQoUDhHEuXgXQMA0n64IOazWjMQhvCIbSGyLuiauy4Yy0kkM6Jfs89T8jh-VVCxNn-SoAhRQUSvAnXZXtZSiFH6yPR0_1GJqv62ZRHssgLHNPuK6Uqz1rwGx6VS0jgIFuKKcKwk_PqdhwGWpAVJI1NNmm8Bw3-gcbP9YJ3I3mgq84uQHH2lC9X6HiUtlIB7cw62DpStfnREZxYAHbyXbnwYqEK0cbCQSHJJzxTJShCJxEiPQmWN834fh9xIndCUoag23TsgJUu0TXeefzP_fjQEe5rL6IOvpiGNdrpaKnVwQpwzosuM3BbA4HVRNXG5oYzM1nu3R4-1G6_EQdFj9T9XUKgY6N_SD003__mC0)
 
 # Phân tích ca sử dụng Maintain Timecard
 Các lớp phân tích
