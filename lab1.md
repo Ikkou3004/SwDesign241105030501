@@ -19,11 +19,11 @@ Cơ chế cần giải quyết trong hệ thống MVC
 Báo cáo thông tin: Cho phép nhân viên xem các báo cáo cá nhân, bao gồm số giờ làm, tổng tiền lương nhận được, và các chỉ số khác.
 
 # Phân tích ca sử dụng Payment
-Các lớp phân tích:
-- Employee: Lớp chứa thông tin cơ bản của nhân viên (ID, tên, loại nhân viên, phương thức thanh toán).
-- Timecard: Lớp đại diện cho chấm công của nhân viên.
-- Payment: Lớp đại diện cho giao dịch thanh toán, chứa thông tin về số tiền và phương thức thanh toán.
-- PayrollAdministrator: Lớp đại diện cho người quản lý hệ thống payroll, có quyền thêm, xóa, và chỉnh sửa thông tin nhân viên.
+Các lớp phân tích (Analysis Classes)
+- Employee: Chứa thông tin cá nhân và phương thức thanh toán.
+- Payment: Đơn vị giao dịch thanh toán chứa chi tiết về số tiền và phương thức thanh toán.
+- Payroll: Quản lý chi tiết lương cho từng nhân viên, bao gồm xử lý lương theo thời gian và hoa hồng.
+- PaymentController: Điều khiển các thao tác liên quan đến thanh toán, nhận yêu cầu từ người dùng và chuyển đổi lương đã tính toán đến phương thức thanh toán được chọn.
 
 # Phân tích ca sử dụng Maintain Timecard
 Các lớp phân tích:
