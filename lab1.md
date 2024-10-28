@@ -32,9 +32,8 @@ Các lớp phân tích
 - TimecardController: Điều khiển các thao tác liên quan đến chấm công, nhận thông tin từ View và lưu trữ vào Model.
 
 # Hợp nhất kết quả phân tích
-  Kết quả phân tích từ hai ca sử dụng cho thấy hệ thống cần tập trung vào việc quản lý thời gian làm việc của nhân viên, tính toán lương tự động dựa trên chấm công và đơn hàng, đồng thời hỗ trợ các phương thức thanh toán linh hoạt. Hệ thống cũng cần tích hợp với cơ sở dữ liệu DB2 hiện tại để truy xuất thông tin dự án.
-  Bố cục tổng thể:
-- Giao diện người dùng (UI) cho phép nhân viên và quản trị viên tương tác với hệ thống.
-- Máy chủ ứng dụng xử lý các logic nghiệp vụ phức tạp, bao gồm tính toán lương và báo cáo.
-- Máy chủ cơ sở dữ liệu lưu trữ thông tin chấm công, đơn hàng và lương.
-- Kết nối với DB2 đảm bảo khả năng tương tác với cơ sở dữ liệu hiện có mà không cần thay thế.
+Hệ thống Payroll dựa trên kiến trúc MVC sẽ gồm các thành phần và hoạt động chính như sau:
+- Model quản lý toàn bộ dữ liệu của hệ thống, đảm bảo tính nhất quán và bảo mật thông tin chấm công và thanh toán.
+- View cho phép nhân viên và Payroll Administrator nhập và xem dữ liệu cần thiết, như chấm công và báo cáo cá nhân.
+- Controller điều hướng các yêu cầu từ View đến Model, xử lý logic nghiệp vụ như tính lương và tạo báo cáo.
+Kiến trúc MVC giúp hệ thống Payroll dễ mở rộng, bảo trì, và đảm bảo tính tách biệt giữa các thành phần, giúp tối ưu hóa hiệu quả hoạt động và tăng tính linh hoạt khi cần mở rộng chức năng.
