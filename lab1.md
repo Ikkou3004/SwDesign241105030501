@@ -35,6 +35,10 @@ Các lớp phân tích
 - Timecard: Lớp chứa dữ liệu về số giờ làm của nhân viên, bao gồm thông tin làm thêm giờ.
 - TimecardController: Điều khiển các thao tác liên quan đến chấm công, nhận thông tin từ View và lưu trữ vào Model.
 
+![This is a class diagram](https://www.planttext.com/api/plantuml/png/T90z3i8m38NtdC9ZAvKBT42LW841YIjOgH6LyaVg33aR0qVY2YGqHQY5yJr_VlvvtX_ToEWvQ2LGilLmq4xPI2HSiWSvE3GCPuoQ3E-iOM-L8h-iPlTNXn1p7coswvWMFDq2ZLmg5HNwsDTYHPU8B5gGg6HGo9ISPLiclkObsDD4leUWji5m0sxI9-AhxJzodyW6qbSuZ7-Mc6zgmLWUBd7MLOceHKUcppzz0G00__y30000)
+
+![This is a class diagram](https://www.planttext.com/api/plantuml/png/X91B2i8m48RtESKiA-W5kf22k73XgbuW9bC899cGJ8IUpOL7yWgcfLc8BMx_npUFz_FL9PQHixD2AgO8PnSiZOWY5Dae4wHdk1c7IaPz8i-HhCMuQd-9Lz9eXQWyE1nNC2saV7U6gzFW4h_eFV0YxiHlSSBD4mf1Fl1FVqvkRQ383oQwlc2QhL7rYXOyiHd6FYk5APLyXrvFt_i0003__mC0)
+
 # Hợp nhất kết quả phân tích
 Hệ thống Payroll dựa trên kiến trúc MVC sẽ gồm các thành phần và hoạt động chính như sau:
 - Model quản lý toàn bộ dữ liệu của hệ thống, đảm bảo tính nhất quán và bảo mật thông tin chấm công và thanh toán.
