@@ -35,7 +35,7 @@ Các lớp phân tích
 - Timecard: Lớp chứa dữ liệu về số giờ làm của nhân viên, bao gồm thông tin làm thêm giờ.
 - TimecardController: Điều khiển các thao tác liên quan đến chấm công, nhận thông tin từ View và lưu trữ vào Model.
 
-![This is a class diagram](https://www.planttext.com/api/plantuml/png/T90z3i8m38NtdC9ZAvKBT42LW841YIjOgH6LyaVg33aR0qVY2YGqHQY5yJr_VlvvtX_ToEWvQ2LGilLmq4xPI2HSiWSvE3GCPuoQ3E-iOM-L8h-iPlTNXn1p7coswvWMFDq2ZLmg5HNwsDTYHPU8B5gGg6HGo9ISPLiclkObsDD4leUWji5m0sxI9-AhxJzodyW6qbSuZ7-Mc6zgmLWUBd7MLOceHKUcppzz0G00__y30000)
+![This is a class diagram](https://www.planttext.com/api/plantuml/png/d5BBIaCn4DtdAuQxgk8jkWrI2YfKa6ugkCwz6TfW7cMI5AJqorpuIVw2YKqYLDqqa8IScJDdJfBFzu-v3u92D9gDMdWF3sQhtHiYx1caqGCMu55oK3OKr0g375Q1b5qNA2Y3eo3fEJmf7swVotds7GSGKbPeKdCvLEY2myufoGwiD583hH4fGfAyJsi1DYwIVt7qYgcET77GDU9sI5bYaJDEOkD6q1gNqGn8pS4lrJjd0pcjaOe-W8-3KQ5PEBcNA_ZVqv4Vjzd1EVpKNNkMxgQ3leVkUZgzx7ukYOCHgKgQ7cRi3nULbxPMYyDuJCYSELgPly4N0000__y30000)
 
 ![This is a class diagram](https://www.planttext.com/api/plantuml/png/X91B2i8m48RtESKiA-W5kf22k73XgbuW9bC899cGJ8IUpOL7yWgcfLc8BMx_npUFz_FL9PQHixD2AgO8PnSiZOWY5Dae4wHdk1c7IaPz8i-HhCMuQd-9Lz9eXQWyE1nNC2saV7U6gzFW4h_eFV0YxiHlSSBD4mf1Fl1FVqvkRQ383oQwlc2QhL7rYXOyiHd6FYk5APLyXrvFt_i0003__mC0)
 
