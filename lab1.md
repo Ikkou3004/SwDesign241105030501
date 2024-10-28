@@ -26,10 +26,10 @@ Các lớp phân tích (Analysis Classes)
 - PaymentController: Điều khiển các thao tác liên quan đến thanh toán, nhận yêu cầu từ người dùng và chuyển đổi lương đã tính toán đến phương thức thanh toán được chọn.
 
 # Phân tích ca sử dụng Maintain Timecard
-Các lớp phân tích:
-Employee: Chứa thông tin của nhân viên.
-Timecard: Lớp chứa các bản ghi chấm công.
-PayrollAdministrator: Người quản lý có thể duyệt và chỉnh sửa chấm công.
+Các lớp phân tích
+- Employee: Chứa thông tin chấm công.
+- Timecard: Lớp chứa dữ liệu về số giờ làm của nhân viên, bao gồm thông tin làm thêm giờ.
+- TimecardController: Điều khiển các thao tác liên quan đến chấm công, nhận thông tin từ View và lưu trữ vào Model.
 
 # Hợp nhất kết quả phân tích
   Kết quả phân tích từ hai ca sử dụng cho thấy hệ thống cần tập trung vào việc quản lý thời gian làm việc của nhân viên, tính toán lương tự động dựa trên chấm công và đơn hàng, đồng thời hỗ trợ các phương thức thanh toán linh hoạt. Hệ thống cũng cần tích hợp với cơ sở dữ liệu DB2 hiện tại để truy xuất thông tin dự án.
