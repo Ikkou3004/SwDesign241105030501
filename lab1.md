@@ -1,9 +1,15 @@
 # Phân Tích Kiến Trúc
-Đề xuất kiến trúc cho bài toán là Client Server
-Hệ thống sẽ bao gồm các thành phần sau:
-- Client (Windows-based desktop): Giao diện người dùng cho phép các nhân viên nhập thông tin và truy xuất dữ liệu liên quan đến bảng chấm công, đơn hàng và báo cáo.
-- Application Server: Xử lý logic nghiệp vụ liên quan đến việc tính toán lương, quản lý nhân viên và kết nối với cơ sở dữ liệu.
-- Database Server: Lưu trữ thông tin về nhân viên, chấm công, đơn hàng, và tích hợp với cơ sở dữ liệu quản lý dự án hiện có (DB2 trên IBM mainframe).
+Đề xuất kiến trúc MVC
+Hệ thống Payroll sẽ tuân theo kiến trúc MVC với ba thành phần chính:
+- Model:
+  Đây là nơi xử lý nghiệp vụ và lưu trữ dữ liệu, bao gồm các lớp như Employee, Timecard, PurchaseOrder, Payroll, và Report.
+Các lớp này chịu trách nhiệm tính toán lương (bao gồm cả phần hoa hồng cho nhân viên được hưởng), xử lý chấm công và lưu trữ các thông tin khác như phương thức thanh toán và dữ liệu báo cáo.
+- View:
+  Phần giao diện cho nhân viên và Payroll Administrator, sử dụng giao diện desktop trên nền tảng Windows.
+Các giao diện sẽ bao gồm các màn hình chính như nhập thông tin chấm công, tạo đơn hàng, cập nhật thông tin cá nhân, và xem báo cáo cá nhân.
+- Controller:
+  Controller tiếp nhận các yêu cầu từ người dùng (qua View), thực hiện các thao tác cần thiết lên Model, và sau đó cập nhật View với dữ liệu mới nhất.
+Các Controller cụ thể sẽ bao gồm: TimecardController, PaymentController, EmployeeController, và ReportController.
 
 # Cơ chế Phân Tích
 Một số cơ chế cần giải quyết trong bài toán:
