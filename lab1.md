@@ -1,13 +1,13 @@
 # Phân Tích Kiến Trúc
 Đề xuất kiến trúc MVC
 Hệ thống Payroll sẽ tuân theo kiến trúc MVC với ba thành phần chính:
-1.Model:
+- Model:
   Đây là nơi xử lý nghiệp vụ và lưu trữ dữ liệu, bao gồm các lớp như Employee, Timecard, PurchaseOrder, Payroll, và Report.
 Các lớp này chịu trách nhiệm tính toán lương (bao gồm cả phần hoa hồng cho nhân viên được hưởng), xử lý chấm công và lưu trữ các thông tin khác như phương thức thanh toán và dữ liệu báo cáo.
-2.View:
+- View:
   Phần giao diện cho nhân viên và Payroll Administrator, sử dụng giao diện desktop trên nền tảng Windows.
 Các giao diện sẽ bao gồm các màn hình chính như nhập thông tin chấm công, tạo đơn hàng, cập nhật thông tin cá nhân, và xem báo cáo cá nhân.
-3.Controller:
+  - Controller:
   Controller tiếp nhận các yêu cầu từ người dùng (qua View), thực hiện các thao tác cần thiết lên Model, và sau đó cập nhật View với dữ liệu mới nhất.
 Các Controller cụ thể sẽ bao gồm: TimecardController, PaymentController, EmployeeController, và ReportController.
 
