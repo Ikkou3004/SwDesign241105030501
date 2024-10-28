@@ -25,7 +25,7 @@ Các lớp phân tích (Analysis Classes)
 - Payroll: Quản lý chi tiết lương cho từng nhân viên, bao gồm xử lý lương theo thời gian và hoa hồng.
 - PaymentController: Điều khiển các thao tác liên quan đến thanh toán, nhận yêu cầu từ người dùng và chuyển đổi lương đã tính toán đến phương thức thanh toán được chọn.
 
-![This is a class diagram](https://www.planttext.com/api/plantuml/png/Z5BDJiCm3BxtAQoUDhHEuXgXQMA0n64IOazWjMQhvCIbSGyLuiauy4Yy0kkM6Jfs89T8jh-VVCxNn-SoAhRQUSvAnXZXtZSiFH6yPR0_1GJqv62ZRHssgLHNPuK6Uqz1rwGx6VS0jgIFuKKcKwk_PqdhwGWpAVJI1NNmm8Bw3-gcbP9YJ3I3mgq84uQHH2lC9X6HiUtlIB7cw62DpStfnREZxYAHbyXbnwYqEK0cbCQSHJJzxTJShCJxEiPQmWN834fh9xIndCUoag23TsgJUu0TXeefzP_fjQEe5rL6IOvpiGNdrpaKnVwQpwzosuM3BbA4HVRNXG5oYzM1nu3R4-1G6_EQdFj9T9XUKgY6N_SD003__mC0)
+![This is a class diagram](https://www.planttext.com/api/plantuml/png/Z5ExJWCn4Epp5Qkh0b8Yqbw18W451H8Y1VNcl5mi_0Zs6kc4-38AFebVm4vy9d90uGhhDBExCpk--_huN7f6nq6hIQVGUxZHMsK78dYRG7ncG1cu5Ir8mnargAc55Jjf-WnjST1a-8vuOqN5eH2ElAzGqYXLmTudsSBzVb1nWDe6moq86zQA_g6MkMlaw36T6O-hSl2_2Zghr8cLr-XfXGhTK5dPsE3yetNF92gcirfBxwKr3pil1oH0XweBAk9HVdfMaJqPSdikhPBu_7gKqvKrdEoJomi0E7e9v7bihlQ9irwj5BdMM9PFmtZjqvnTaHkBeshvD9f50xCPD1Vp-NbJhgk53NguF2vRD2NX5ZGQx2dLZTXVqyO8Scsrwi7m8jZ6m7S59rj-_CGyeah7gML9HgG_uHi00F__0m00)
 
 # Phân tích ca sử dụng Maintain Timecard
 Các lớp phân tích
