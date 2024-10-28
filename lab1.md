@@ -27,6 +27,8 @@ Các lớp phân tích (Analysis Classes)
 
 ![This is a class diagram](https://www.planttext.com/api/plantuml/png/Z5ExJWCn4Epp5Qkh0b8Yqbw18W451H8Y1VNcl5mi_0Zs6kc4-38AFebVm4vy9d90uGhhDBExCpk--_huN7f6nq6hIQVGUxZHMsK78dYRG7ncG1cu5Ir8mnargAc55Jjf-WnjST1a-8vuOqN5eH2ElAzGqYXLmTudsSBzVb1nWDe6moq86zQA_g6MkMlaw36T6O-hSl2_2Zghr8cLr-XfXGhTK5dPsE3yetNF92gcirfBxwKr3pil1oH0XweBAk9HVdfMaJqPSdikhPBu_7gKqvKrdEoJomi0E7e9v7bihlQ9irwj5BdMM9PFmtZjqvnTaHkBeshvD9f50xCPD1Vp-NbJhgk53NguF2vRD2NX5ZGQx2dLZTXVqyO8Scsrwi7m8jZ6m7S59rj-_CGyeah7gML9HgG_uHi00F__0m00)
 
+![This is a class diagram](https://www.planttext.com/api/plantuml/png/T90z3i8m38NtdC9ZAvKBT42LW841YIjOgH6LyaVg33aR0qVY2YGqHQY5yJr_VlvvtX_ToEWvQ2LGilLmq4xPI2HSiWSvE3GCPuoQ3E-iOM-L8h-iPlTNXn1p7coswvWMFDq2ZLmg5HNwsDTYHPU8B5gGg6HGo9ISPLiclkObsDD4leUWji5m0sxI9-AhxJzodyW6qbSuZ7-Mc6zgmLWUBd7MLOceHKUcppzz0G00__y30000)
+
 # Phân tích ca sử dụng Maintain Timecard
 Các lớp phân tích
 - Employee: Chứa thông tin chấm công.
