@@ -12,11 +12,11 @@ Hệ thống Payroll sẽ tuân theo kiến trúc MVC với ba thành phần ch�
   + Các Controller cụ thể sẽ bao gồm: TimecardController, PaymentController, EmployeeController, và ReportController.
 
 # Cơ chế Phân Tích
-Một số cơ chế cần giải quyết trong bài toán:
-- Xác thực và phân quyền: Nhân viên chỉ có thể truy cập và chỉnh sửa dữ liệu cá nhân. Payroll Admin có quyền thay đổi thông tin của tất cả nhân viên.
-- Tính toán lương: Cơ chế xử lý tự động tính toán lương theo thời gian, loại hình nhân viên (giờ công, lương cứng, hoa hồng), và ngày thanh toán.
-- Báo cáo cho nhân viên: Hệ thống phải hỗ trợ các báo cáo tự động về giờ công, đơn hàng, và lương đã nhận.
-- Tích hợp với DB2: Hệ thống phải kết nối an toàn và chỉ truy xuất dữ liệu từ cơ sở dữ liệu DB2 hiện có.
+Cơ chế cần giải quyết trong hệ thống MVC
+- Phân quyền người dùng: Các nhân viên chỉ có quyền truy cập và chỉnh sửa thông tin cá nhân, trong khi Payroll Administrator có quyền thêm, xóa, và cập nhật thông tin nhân viên.
+- Xử lý và tính toán lương tự động: Tự động tính toán tiền lương hàng tuần cho nhân viên tính theo giờ và cuối tháng cho nhân viên hưởng lương cứng, xử lý thêm phần tính lương ngoài giờ và hoa hồng từ đơn hàng.
+- Quản lý phương thức thanh toán: Cập nhật phương thức thanh toán theo yêu cầu nhân viên (gửi qua bưu điện, chuyển khoản hoặc nhận trực tiếp).
+Báo cáo thông tin: Cho phép nhân viên xem các báo cáo cá nhân, bao gồm số giờ làm, tổng tiền lương nhận được, và các chỉ số khác.
 
 # Phân tích ca sử dụng Payment
 Các lớp phân tích:
