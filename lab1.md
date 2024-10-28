@@ -36,4 +36,5 @@ Hệ thống Payroll dựa trên kiến trúc MVC sẽ gồm các thành phần 
 - Model quản lý toàn bộ dữ liệu của hệ thống, đảm bảo tính nhất quán và bảo mật thông tin chấm công và thanh toán.
 - View cho phép nhân viên và Payroll Administrator nhập và xem dữ liệu cần thiết, như chấm công và báo cáo cá nhân.
 - Controller điều hướng các yêu cầu từ View đến Model, xử lý logic nghiệp vụ như tính lương và tạo báo cáo.
-Kiến trúc MVC giúp hệ thống Payroll dễ mở rộng, bảo trì, và đảm bảo tính tách biệt giữa các thành phần, giúp tối ưu hóa hiệu quả hoạt động và tăng tính linh hoạt khi cần mở rộng chức năng.
+
+  Kiến trúc MVC giúp hệ thống Payroll dễ mở rộng, bảo trì, và đảm bảo tính tách biệt giữa các thành phần, giúp tối ưu hóa hiệu quả hoạt động và tăng tính linh hoạt khi cần mở rộng chức năng.
