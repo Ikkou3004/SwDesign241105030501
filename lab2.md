@@ -24,9 +24,9 @@ Các lớp phân tích
 
 ## Login
 Các lớp phân tích
-- Employee: Là đối tượng chính thực hiện hành động đăng nhập.
-  + Thuộc tính liên quan: employeeID, password.
-  + Nhiệm vụ:
-      Nhập thông tin đăng nhập (tên đăng nhập và mật khẩu).
-      Hệ thống xác thực thông tin.
-      Nếu thông tin đúng, cấp quyền truy cập cho nhân viên vào các chức năng tương ứng với vai trò của họ.
+* Employee: Là đối tượng chính thực hiện hành động đăng nhập.
+  - Thuộc tính liên quan: employeeID, password.
+  - Nhiệm vụ:
+    + Nhập thông tin đăng nhập (tên đăng nhập và mật khẩu).
+    + Hệ thống xác thực thông tin.
+    + Nếu thông tin đúng, cấp quyền truy cập cho nhân viên vào các chức năng tương ứng với vai trò của họ.
