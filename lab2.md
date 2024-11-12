@@ -50,21 +50,82 @@ Phân tích lớp
   - `handle_error()`: Hiển thị thông báo lỗi và xử lý các thông tin thiếu hoặc không hợp lệ.
   - `save_report()`: Lưu báo cáo, tương tác với hệ thống lưu trữ file.
 
-![This is a class diagram](https://www.planttext.com/api/plantuml/png/N96nJiGm38RtF8ML4Qa3QwUJW841X7I7c7sDTQrecYfsXmhn48YHYUVem89uZti2Ne5mIjfBCrZwVplEP-Tt-jgme9V1jaeQQGcsFv_m_NQStg4zJXyzLBM3HoQumX2smzus0hl6KeNUA5Mro0mtjc_TI0Gl2i8fWA9nQqfeEebkXvPAOF5DTuWM6kE9UUMcwxknNr_eSRJKoHr9xKBpXtEfNXDG0WHaq4de6K-Ya-CPbF3QTOZHgDtW-SdvPyhggXhzWUu7koT_xYVgSjx70fHndgWoPq6p9vqD7fhC2zQN6ee2z8LUPYoXHbQp_4-7gfbXdSXNjg7EXC__0m00__y30000)
+![This is a class diagram]()
 
 ## Maintain Purchase Order
   Các lớp phân tích:
-- Employee: Đại diện cho nhân viên.
-  + Thuộc tính: `employeeID`, `name`, `address`, `employeeType`, `aymentMethod`.
-  + Nhiệm vụ: Lưu trữ thông tin cơ bản của nhân viên và phân quyền cho phép nhân viên quản lý đơn đặt hàng.
-- Timecard: Đại diện cho thẻ chấm công.
-  + Thuộc tính: `timecardID`, `date`, `hoursWorked`, `chargeNumber`.
-  + Nhiệm vụ: Cung cấp thông tin chấm công, đảm bảo rằng thời gian làm việc của nhân viên đủ điều kiện để quản lý đơn đặt hàng (nếu có yêu cầu về số giờ làm việc tối thiểu).
-- PaymentMethod: Đại diện cho phương thức thanh toán.
-  + Thuộc tính: `methodType` (PostOffice, Banking, At Work).
-  + Nhiệm vụ: Xác định phương thức thanh toán của nhân viên nếu có yêu cầu chi trả liên quan đến việc quản lý đơn đặt hàng.
+1. Lớp Nhân Viên Được Hoa Hồng (Commissioned Employee)
+* Nhiệm vụ:
+  - Khởi tạo việc tạo, cập nhật hoặc xóa đơn hàng mua.
+  - Cung cấp các thông tin cần thiết khi tạo hoặc cập nhật đơn hàng.
+  - Xác nhận việc xóa đơn hàng nếu cần.
+* Thuộc tính:
+  - `employee_id`: Mã định danh duy nhất của nhân viên.
+  - `name`: Tên nhân viên.
+  - `role`: Chức vụ của nhân viên (đảm bảo nhân viên có quyền thực hiện các hành động liên quan đến đơn hàng mua).
+* Phương thức:
+  - `create_purchase_order()`: Khởi tạo và nhập thông tin cho một đơn hàng mới.
+  - `update_purchase_order()`: Chỉnh sửa thông tin của một đơn hàng hiện có.
+  - `delete_purchase_order()`: Xóa một đơn hàng đã tồn tại.
+2. Lớp Đơn Hàng Mua (Purchase Order)
+* Nhiệm vụ
+  - Đại diện cho đơn hàng mua được tạo, cập nhật hoặc xóa.
+  - Lưu trữ thông tin về đơn hàng, bao gồm các sản phẩm, khách hàng, ngày, và tình trạng của đơn hàng (đang mở hoặc đã đóng).
+* Thuộc tính:
+  - `purchase_order_id`: Mã định danh duy nhất của đơn hàng mua.
+  - `customer_contact`: Thông tin liên hệ của khách hàng.
+  - `billing_address`: Địa chỉ thanh toán của khách hàng.
+  - `products`: Danh sách các sản phẩm đã mua.
+  - `order_date`: Ngày đặt hàng.
+  - `status`: Trạng thái của đơn hàng (mở hoặc đóng).
+* Phương thức:
+  - `generate_order_id()`: Sinh ra một mã đơn hàng mới khi tạo đơn hàng.
+  - `update_order()` Xóa đơn hàng khỏi hệ thống.
+  - `verify_order_access()`: Xác minh quyền truy cập vào đơn hàng (đảm bảo rằng nhân viên có quyền thay đổi hoặc xóa đơn hàng).
+3. Lớp Hệ Thống (System)
+Trách nhiệm:
 
-![This is a class diagram](https://www.planttext.com/api/plantuml/png/P94zJiGm48Lxds9AGCe5KgtGKb0iKAn4FSIZ95h_PCTs4I5EWsYGkC16Q8izIKx05R1Dj2HGUPxcwRtFzjTmN3cFx8DMebBe7DpeJjcU29u504tYTXs5GKtnG2cPd9jjjtsN5XtscepVa6-iZBg02iq63TRq4BXgqD4zI-ABonAkhLM4Hho8gNRXoDqsJRauJslqgQJrf5DtfFPX3l4RjMqrLSWof_X9v23vaz7OmExHyeuIPgpbckw2VYAUySmlavDq7lDTe-lyJ5T5yGU-X7qO3wy6rEbJB5VHUwOhGRMdTmExyN3q_trBW1BSE7o078StKmkn8YFZbtq3003__mC0)
+Quản lý việc tạo, cập nhật và xóa đơn hàng mua.
+Kiểm tra tính hợp lệ của các thông tin do nhân viên cung cấp và thông báo lỗi khi cần thiết.
+Hướng dẫn nhân viên qua các bước của quy trình tạo, cập nhật và xóa đơn hàng.
+Thuộc tính:
+
+error_message: Lưu trữ thông báo lỗi khi có sự cố, chẳng hạn như "Đơn hàng không tồn tại" hoặc "Không có quyền truy cập".
+purchase_order: Đại diện cho đơn hàng được tạo, cập nhật hoặc xóa.
+Phương thức:
+
+request_order_info(): Yêu cầu nhân viên nhập thông tin cần thiết để tạo, cập nhật hoặc xóa đơn hàng.
+validate_order_id(): Kiểm tra tính hợp lệ của mã đơn hàng (xem có tồn tại hay không).
+handle_error(): Hiển thị thông báo lỗi nếu có sự cố với các bước quy trình (ví dụ: mã đơn hàng không hợp lệ hoặc không phải của nhân viên).
+confirm_deletion(): Xác nhận việc xóa đơn hàng và yêu cầu nhân viên xác nhận lại hành động này.
+4. Lớp Cơ Sở Dữ Liệu Đơn Hàng (Purchase Order Database)
+Trách nhiệm:
+
+Lưu trữ và quản lý các đơn hàng mua trong hệ thống.
+Cung cấp các chức năng để thêm, sửa và xóa các đơn hàng mua.
+Thuộc tính:
+
+purchase_orders: Danh sách tất cả các đơn hàng mua trong hệ thống.
+Phương thức:
+
+add_purchase_order(): Thêm một đơn hàng mới vào cơ sở dữ liệu.
+update_purchase_order(): Cập nhật thông tin của một đơn hàng hiện có.
+delete_purchase_order(): Xóa một đơn hàng khỏi cơ sở dữ liệu.
+retrieve_purchase_order(): Truy xuất thông tin đơn hàng dựa trên mã đơn hàng.
+5. Lớp Báo Cáo Lỗi (Error Reporting)
+Trách nhiệm:
+
+Quản lý và thông báo lỗi khi có sự cố xảy ra trong quá trình tạo, cập nhật hoặc xóa đơn hàng.
+Cung cấp thông báo lỗi rõ ràng cho nhân viên để họ có thể xử lý.
+Thuộc tính:
+
+error_code: Mã lỗi để phân loại các lỗi.
+error_message: Thông báo lỗi chi tiết.
+Phương thức:
+
+generate_error_message(): Tạo thông báo lỗi chi tiết dựa trên mã lỗi và ngữ cảnh.
+
+![This is a class diagram]()
 
 ## Login
 Các lớp phân tích
