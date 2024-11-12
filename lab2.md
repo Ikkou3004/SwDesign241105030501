@@ -9,6 +9,7 @@ Các lớp phân tích
 - PaymentMethod: Đại diện cho phương thức thanh toán
   + Thuộc tính: `methodType` (PostOffice, Banking, At Work).
   + Nhiệm vụ: Cung cấp các phương thức thanh toán khác nhau cho nhân viên.
+![This is a class diagram](https://www.planttext.com/api/plantuml/png/N96nJiGm38RtF8ML4Qa3QwUJW841X7I7c7sDTQrecYfsXmhn48YHYUVem89uZti2Ne5mIjfBCrZwVplEP-Tt-jgme9V1jaeQQGcsFv_m_NQStg4zJXyzLBM3HoQumX2smzus0hl6KeNUA5Mro0mtjc_TI0Gl2i8fWA9nQqfeEebkXvPAOF5DTuWM6kE9UUMcwxknNr_eSRJKoHr9xKBpXtEfNXDG0WHaq4de6K-Ya-CPbF3QTOZHgDtW-SdvPyhggXhzWUu7koT_xYVgSjx70fHndgWoPq6p9vqD7fhC2zQN6ee2z8LUPYoXHbQp_4-7gfbXdSXNjg7EXC__0m00__y30000)
 
   ## Maintain Purchase Order
   Các lớp phân tích:
