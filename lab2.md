@@ -22,7 +22,9 @@ Các lớp phân tích
   + Nhiệm vụ: Cung cấp thông tin chấm công, đảm bảo rằng thời gian làm việc của nhân viên đủ điều kiện để quản lý đơn đặt hàng (nếu có yêu cầu về số giờ làm việc tối thiểu).
 - PaymentMethod: Đại diện cho phương thức thanh toán.
   + Thuộc tính: `methodType` (PostOffice, Banking, At Work).
-  + Nhiệm vụ: Xác định phương thức thanh toán của nhân viên nếu có yêu cầu chi trả liên quan đến     việc quản lý đơn đặt hàng.
+  + Nhiệm vụ: Xác định phương thức thanh toán của nhân viên nếu có yêu cầu chi trả liên quan đến việc quản lý đơn đặt hàng.
+
+![This is a class diagram](https://www.planttext.com/api/plantuml/png/P94zJiGm48Lxds9AGCe5KgtGKb0iKAn4FSIZ95h_PCTs4I5EWsYGkC16Q8izIKx05R1Dj2HGUPxcwRtFzjTmN3cFx8DMebBe7DpeJjcU29u504tYTXs5GKtnG2cPd9jjjtsN5XtscepVa6-iZBg02iq63TRq4BXgqD4zI-ABonAkhLM4Hho8gNRXoDqsJRauJslqgQJrf5DtfFPX3l4RjMqrLSWof_X9v23vaz7OmExHyeuIPgpbckw2VYAUySmlavDq7lDTe-lyJ5T5yGU-X7qO3wy6rEbJB5VHUwOhGRMdTmExyN3q_trBW1BSE7o078StKmkn8YFZbtq3003__mC0)
 
 ## Login
 Các lớp phân tích
