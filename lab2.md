@@ -49,4 +49,16 @@ Các lớp phân tích
   - Thuộc tính liên quan: `paymentMethodID`, `methodType`.
   - Nhiệm vụ: Không trực tiếp thực hiện hành động tạo báo cáo.
 
+## Maintain Employee Info
+Các lớp phân tích
+* Employee: Là đối tượng chính được quản lý trong Use Case này.
+  - Thuộc tính liên quan: `employeeID`, `name`, `department`, `role`, `contactInfo`, `address`, `emergencyContact`.
+  - Nhiệm vụ: Không trực tiếp thực hiện hành động cập nhật thông tin.
+* Timecard: Gián tiếp liên quan đến việc cập nhật thông tin nhân viên.
+  - Thuộc tính liên quan: `employeeID`.
+  - Nhiệm vụ: Không trực tiếp thực hiện hành động cập nhật thông tin.
+* PaymentMethod: Gián tiếp liên quan đến việc cập nhật thông tin nhân viên.
+  - Thuộc tính liên quan: `employeeID`.
+  - Nhiệm vụ: Không trực tiếp thực hiện hành động cập nhật thông tin.
 
+  
