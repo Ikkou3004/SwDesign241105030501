@@ -61,4 +61,13 @@ Các lớp phân tích
   - Thuộc tính liên quan: `employeeID`.
   - Nhiệm vụ: Không trực tiếp thực hiện hành động cập nhật thông tin.
 
-  
+  ## Run Payroll
+* Employee: Là đối tượng nhận lương.
+  - Thuộc tính liên quan: `employeeID`, `name`, `salary`, `paymentInfo`.
+  - Nhiệm vụ: Không trực tiếp thực hiện hành động chạy bảng lương.
+* Timecard: Cung cấp dữ liệu về thời gian làm việc để tính toán lương.
+  - Thuộc tính liên quan: `employeeID`, `date`, `hoursWorked`.
+  - Nhiệm vụ: Không trực tiếp thực hiện hành động chạy bảng lương.
+* PaymentMethod: Xác định phương thức thanh toán lương cho nhân viên.
+  - Thuộc tính liên quan: `paymentMethodID`, `methodType`, `bankAccount`.
+  - Nhiệm vụ: Không trực tiếp thực hiện hành động chạy bảng lương.
