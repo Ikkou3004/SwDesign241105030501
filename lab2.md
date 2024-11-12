@@ -25,8 +25,14 @@ Các lớp phân tích
 ## Login
 Các lớp phân tích
 * Employee: Là đối tượng chính thực hiện hành động đăng nhập.
-  - Thuộc tính liên quan: employeeID, password.
+  - Thuộc tính liên quan: `employeeID`, `password`.
   - Nhiệm vụ:
     + Nhập thông tin đăng nhập (tên đăng nhập và mật khẩu).
     + Hệ thống xác thực thông tin.
     + Nếu thông tin đúng, cấp quyền truy cập cho nhân viên vào các chức năng tương ứng với vai trò của họ.
+* Timecard: Gián tiếp liên quan đến quá trình đăng nhập.
+  - Thuộc tính liên quan: `employeeID`.
+  - Nhiệm vụ: Không có nhiệm vụ trực tiếp liên quan đến Use Case Login.
+* PaymentMethod: Gián tiếp liên quan đến quá trình đăng nhập.
+  - Thuộc tính liên quan: Không liên quan trực tiếp.
+  - Nhiệm vụ: Không có nhiệm vụ trực tiếp liên quan đến Use Case Login.
