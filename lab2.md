@@ -2,54 +2,53 @@
 Phân tích lớp
 1. Nhân Viên (Employee)
 * Nhiệm vụ:
-- Khởi tạo việc tạo báo cáo bằng cách chỉ định loại báo cáo, khoảng thời gian và các tiêu chí bổ sung.
-- Có thể chọn lưu báo cáo hoặc hủy bỏ.
-- Nhập thông tin thiếu nếu được hệ thống yêu cầu.
+  - Khởi tạo việc tạo báo cáo bằng cách chỉ định loại báo cáo, khoảng thời gian và các tiêu chí bổ sung.
+  - Có thể chọn lưu báo cáo hoặc hủy bỏ.
+  - Nhập thông tin thiếu nếu được hệ thống yêu cầu.
 * Thuộc tính:
-- `employee_id`: Mã định danh duy nhất của nhân viên.
-- `name`: Tên nhân viên.
-- `department`: Bộ phận của nhân viên (nếu cần cho các loại báo cáo).
+  - `employee_id`: Mã định danh duy nhất của nhân viên.
+  - `name`: Tên nhân viên.
+  - `department`: Bộ phận của nhân viên (nếu cần cho các loại báo cáo).
 * Phương thức:
-- `request_report_type()`: Yêu cầu nhân viên chọn loại báo cáo.
-- `provide_dates()`: Cung cấp ngày bắt đầu và kết thúc cho báo cáo.
-- `select_charge_number()`: Nếu cần, nhân viên chọn mã công trình (charge number).
-- `save_report()`: Lưu báo cáo vào vị trí và tên file đã chỉ định.
-- `discard_report()`: Hủy bỏ báo cáo nếu nhân viên không muốn lưu.
+  - `request_report_type()`: Yêu cầu nhân viên chọn loại báo cáo.
+  - `provide_dates()`: Cung cấp ngày bắt đầu và kết thúc cho báo cáo.
+  - `select_charge_number()`: Nếu cần, nhân viên chọn mã công trình (charge number).
+  - `save_report()`: Lưu báo cáo vào vị trí và tên file đã chỉ định.
+  - `discard_report()`: Hủy bỏ báo cáo nếu nhân viên không muốn lưu.
 2. Lớp Báo Cáo (Report)
 * Nhiệm vụ:
-- Đại diện cho báo cáo mà nhân viên tạo.
-- Lưu trữ dữ liệu về loại báo cáo, khoảng thời gian và các thông tin cụ thể của báo cáo.
+  - Đại diện cho báo cáo mà nhân viên tạo.
+  - Lưu trữ dữ liệu về loại báo cáo, khoảng thời gian và các thông tin cụ thể của báo cáo.
 * Thuộc tính:
-- `report_type`: Loại báo cáo (ví dụ: Tổng số giờ làm việc, Nghỉ phép/ốm, Tổng lương YTD, v.v.).
-- `begin_date`: Ngày bắt đầu của báo cáo.
-- `end_date`: Ngày kết thúc của báo cáo.
-- `charge_number`: (Tùy chọn) Mã công trình nếu báo cáo là "Tổng số giờ làm việc cho một dự án".
-- `content`: Dữ liệu hoặc nội dung báo cáo, chẳng hạn như số giờ làm việc, thông tin nghỉ phép, lương, v.v.
-- `file_location`: Vị trí lưu báo cáo nếu đã lưu.
+  - `report_type`: Loại báo cáo (ví dụ: Tổng số giờ làm việc, Nghỉ phép/ốm, Tổng lương YTD, v.v.).
+  - `begin_date`: Ngày bắt đầu của báo cáo.
+  - `end_date`: Ngày kết thúc của báo cáo.
+  - `charge_number`: (Tùy chọn) Mã công trình nếu báo cáo là "Tổng số giờ làm việc cho một dự án".
+  - `content`: Dữ liệu hoặc nội dung báo cáo, chẳng hạn như số giờ làm việc, thông tin nghỉ phép, lương, v.v.
+  - `file_location`: Vị trí lưu báo cáo nếu đã lưu.
 * Phương thức:
-- `generate_report()`: Tạo báo cáo dựa trên các tiêu chí đầu vào.
-- `save_report()`: Lưu báo cáo vào vị trí file đã chỉ định.
-- `discard_report()`: Hủy bỏ báo cáo nếu nhân viên không muốn lưu.
+  - `generate_report()`: Tạo báo cáo dựa trên các tiêu chí đầu vào.
+  - `save_report()`: Lưu báo cáo vào vị trí file đã chỉ định.
+  - `discard_report()`: Hủy bỏ báo cáo nếu nhân viên không muốn lưu.
 3. Lớp Cơ Sở Dữ Liệu Quản Lý Dự Án (Project Management Database)
 * Nhiệm vụ:
-- Quản lý dữ liệu liên quan đến các dự án, đặc biệt là các mã công trình, khi nhân viên chọn báo cáo "Tổng số giờ làm việc cho một dự án".
+  - Quản lý dữ liệu liên quan đến các dự án, đặc biệt là các mã công trình, khi nhân viên chọn báo cáo "Tổng số giờ làm việc cho một dự án".
 * Thuộc tính:
-- `charge_numbers`: Danh sách các mã công trình có sẵn liên quan đến các dự án đang thực hiện.
+  - `charge_numbers`: Danh sách các mã công trình có sẵn liên quan đến các dự án đang thực hiện.
 * Phương thức:
-- `retrieve_charge_numbers()`: Truy xuất và cung cấp danh sách các mã công trình cho nhân viên khi được yêu cầu.
+  - `retrieve_charge_numbers()`: Truy xuất và cung cấp danh sách các mã công trình cho nhân viên khi được yêu cầu.
 4. Lớp Hệ Thống (System hoặc Reporting System)
 * Nhiệm vụ: 
-- Quản lý việc tạo báo cáo, bao gồm việc xử lý lỗi, xác thực đầu vào và cung cấp phản hồi cho nhân viên.
-- Nhắc nhở thông tin thiếu hoặc không hợp lệ và hướng dẫn nhân viên qua các bước.
+  - Quản lý việc tạo báo cáo, bao gồm việc xử lý lỗi, xác thực đầu vào và cung cấp phản hồi cho nhân viên.
+  - Nhắc nhở thông tin thiếu hoặc không hợp lệ và hướng dẫn nhân viên qua các bước.
 * Thuộc tính:
-- `error_message`: Lưu trữ các thông báo lỗi (ví dụ: "Định dạng ngày không hợp lệ" hoặc "Thông tin thiếu").
-- `report`: Là một thể hiện của lớp Báo Cáo (Report) đại diện cho báo cáo hiện tại.
-Phương thức:
-
-- `validate_report_criteria()`: Kiểm tra và xác nhận rằng nhân viên đã cung cấp đủ thông tin cần thiết.
-- `generate_report()`: Quản lý việc tạo báo cáo.
-- `handle_error()`: Hiển thị thông báo lỗi và xử lý các thông tin thiếu hoặc không hợp lệ.
-- `save_report()`: Lưu báo cáo, tương tác với hệ thống lưu trữ file.
+  - `error_message`: Lưu trữ các thông báo lỗi (ví dụ: "Định dạng ngày không hợp lệ" hoặc "Thông tin thiếu").
+  - `report`: Là một thể hiện của lớp Báo Cáo (Report) đại diện cho báo cáo hiện tại.
+* Phương thức:
+  - `validate_report_criteria()`: Kiểm tra và xác nhận rằng nhân viên đã cung cấp đủ thông tin cần thiết.
+  - `generate_report()`: Quản lý việc tạo báo cáo.
+  - `handle_error()`: Hiển thị thông báo lỗi và xử lý các thông tin thiếu hoặc không hợp lệ.
+  - `save_report()`: Lưu báo cáo, tương tác với hệ thống lưu trữ file.
 
 ![This is a class diagram](https://www.planttext.com/api/plantuml/png/N96nJiGm38RtF8ML4Qa3QwUJW841X7I7c7sDTQrecYfsXmhn48YHYUVem89uZti2Ne5mIjfBCrZwVplEP-Tt-jgme9V1jaeQQGcsFv_m_NQStg4zJXyzLBM3HoQumX2smzus0hl6KeNUA5Mro0mtjc_TI0Gl2i8fWA9nQqfeEebkXvPAOF5DTuWM6kE9UUMcwxknNr_eSRJKoHr9xKBpXtEfNXDG0WHaq4de6K-Ya-CPbF3QTOZHgDtW-SdvPyhggXhzWUu7koT_xYVgSjx70fHndgWoPq6p9vqD7fhC2zQN6ee2z8LUPYoXHbQp_4-7gfbXdSXNjg7EXC__0m00__y30000)
 
