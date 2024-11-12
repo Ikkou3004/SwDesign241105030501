@@ -36,3 +36,17 @@ Các lớp phân tích
 * PaymentMethod: Gián tiếp liên quan đến quá trình đăng nhập.
   - Thuộc tính liên quan: Không liên quan trực tiếp.
   - Nhiệm vụ: Không có nhiệm vụ trực tiếp liên quan đến Use Case Login.
+
+## Create Administrative Report
+Các lớp phân tích
+* Employee: Là đối tượng được báo cáo trong nhiều loại báo cáo quản trị.
+  - Thuộc tính liên quan: `employeeID`, `name`, `department`, `role`, `performance`.
+  - Nhiệm vụ: Không trực tiếp thực hiện hành động tạo báo cáo.
+* Timecard: Cung cấp dữ liệu để tính toán các chỉ số hiệu suất liên quan đến thời gian làm việc.
+  - Thuộc tính liên quan: `employeeID`, `date`, `hoursWorked`.
+  - Nhiệm vụ: Không trực tiếp thực hiện hành động tạo báo cáo.
+* PaymentMethod: Có thể được sử dụng để tạo báo cáo về chi phí nhân công và các khoản thanh toán.
+  - Thuộc tính liên quan: `paymentMethodID`, `methodType`.
+  - Nhiệm vụ: Không trực tiếp thực hiện hành động tạo báo cáo.
+
+
