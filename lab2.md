@@ -41,6 +41,8 @@ Các lớp phân tích
   - Thuộc tính liên quan: Không liên quan trực tiếp.
   - Nhiệm vụ: Không có nhiệm vụ trực tiếp liên quan đến Use Case Login.
 
+![This is a class diagram]()
+
 ## Create Administrative Report
 Các lớp phân tích
 * Employee: Là đối tượng được báo cáo trong nhiều loại báo cáo quản trị.
