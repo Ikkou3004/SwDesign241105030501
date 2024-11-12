@@ -16,8 +16,17 @@ Các lớp phân tích
   + Thuộc tính: `employeeID`, `name`, `address`, `employeeType`, `aymentMethod`.
   + Nhiệm vụ: Lưu trữ thông tin cơ bản của nhân viên và phân quyền cho phép nhân viên quản lý đơn đặt hàng.
 - Timecard: Đại diện cho thẻ chấm công.
-  + Thuộc tính: timecardID, date, hoursWorked, chargeNumber.
+  + Thuộc tính: `timecardID`, `date`, `hoursWorked`, `chargeNumber`.
   + Nhiệm vụ: Cung cấp thông tin chấm công, đảm bảo rằng thời gian làm việc của nhân viên đủ điều kiện để quản lý đơn đặt hàng (nếu có yêu cầu về số giờ làm việc tối thiểu).
 - PaymentMethod: Đại diện cho phương thức thanh toán.
-  + Thuộc tính: methodType (PostOffice, Banking, At Work).
+  + Thuộc tính: `methodType` (PostOffice, Banking, At Work).
   + Nhiệm vụ: Xác định phương thức thanh toán của nhân viên nếu có yêu cầu chi trả liên quan đến     việc quản lý đơn đặt hàng.
+
+## Login
+Các lớp phân tích
+- Employee: Là đối tượng chính thực hiện hành động đăng nhập.
+  + Thuộc tính liên quan: employeeID, password.
+  + Nhiệm vụ:
+      Nhập thông tin đăng nhập (tên đăng nhập và mật khẩu).
+      Hệ thống xác thực thông tin.
+      Nếu thông tin đúng, cấp quyền truy cập cho nhân viên vào các chức năng tương ứng với vai trò của họ.
