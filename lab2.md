@@ -164,7 +164,7 @@ Các lớp phân tích
 * Phương thức:
   - `generate_error_message(error_code)`: Tạo thông báo lỗi dựa trên mã lỗi cụ thể.
 
-![This is a class diagram]()
+![This is a class diagram](https://www.planttext.com/api/plantuml/png/b5DDJyCm3BttLrWxRHARuDe36X8xSc7YN8N6wYBoKINUfWdnopZma_WBE6d7bhOIuh9Qjj_pUtRs_Vcr3YGyxOqkQYr2W9U07juBW2NiERJ289Im9Qziax8jTnsTbrbsoJy0Q0bzLNkK72cXmtp1NGUdP2fx97-gj6kKpGkri3NgOUMZw2Kzx6aN2Mj1ojdjAH2QNcA2L6o11YhHU-ShWo681YUa7eHMab6Psf7Xcx7RAE_LEOt29YAfGgl5gSe6vlOwaP5ymjoM4UpgILZ6dJSVkcIbyYsdYuoI7Jqfdat2j5nyP6CNg-mm6kqvvqEEJ2hVpoXxtJvMl8bEdx5rdXZUA-xirqx-ymuDMlHnNhw_2Rh51SrIqZETtSsOvpvz9nz92Ie-IL5JWAEYNJ7PTKqpE4S99aNXV9A_6GRhAM4dhDJCa3o5OZ3X5tgxMd6OV9MWbNqBGAuercXb_7V-0000__y30000)
 
 ## Create Administrative Report
 Các lớp phân tích
