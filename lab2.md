@@ -83,47 +83,38 @@ Phân tích lớp
   - `update_order()` Xóa đơn hàng khỏi hệ thống.
   - `verify_order_access()`: Xác minh quyền truy cập vào đơn hàng (đảm bảo rằng nhân viên có quyền thay đổi hoặc xóa đơn hàng).
 3. Lớp Hệ Thống (System)
-Trách nhiệm:
-
-Quản lý việc tạo, cập nhật và xóa đơn hàng mua.
-Kiểm tra tính hợp lệ của các thông tin do nhân viên cung cấp và thông báo lỗi khi cần thiết.
-Hướng dẫn nhân viên qua các bước của quy trình tạo, cập nhật và xóa đơn hàng.
-Thuộc tính:
-
-error_message: Lưu trữ thông báo lỗi khi có sự cố, chẳng hạn như "Đơn hàng không tồn tại" hoặc "Không có quyền truy cập".
-purchase_order: Đại diện cho đơn hàng được tạo, cập nhật hoặc xóa.
-Phương thức:
-
-request_order_info(): Yêu cầu nhân viên nhập thông tin cần thiết để tạo, cập nhật hoặc xóa đơn hàng.
-validate_order_id(): Kiểm tra tính hợp lệ của mã đơn hàng (xem có tồn tại hay không).
-handle_error(): Hiển thị thông báo lỗi nếu có sự cố với các bước quy trình (ví dụ: mã đơn hàng không hợp lệ hoặc không phải của nhân viên).
-confirm_deletion(): Xác nhận việc xóa đơn hàng và yêu cầu nhân viên xác nhận lại hành động này.
+* Nhiệm vụ:
+  - Quản lý việc tạo, cập nhật và xóa đơn hàng mua.
+  - Kiểm tra tính hợp lệ của các thông tin do nhân viên cung cấp và thông báo lỗi khi cần thiết.
+  - Hướng dẫn nhân viên qua các bước của quy trình tạo, cập nhật và xóa đơn hàng.
+* Thuộc tính:
+  - `error_message`: Lưu trữ thông báo lỗi khi có sự cố, chẳng hạn như "Đơn hàng không tồn tại" hoặc "Không có quyền truy cập".
+  - `purchase_order`: Đại diện cho đơn hàng được tạo, cập nhật hoặc xóa.
+* Phương thức:
+  - `request_order_info()`: Yêu cầu nhân viên nhập thông tin cần thiết để tạo, cập nhật hoặc xóa đơn hàng.
+  - `validate_order_id()`: Kiểm tra tính hợp lệ của mã đơn hàng (xem có tồn tại hay không).
+  - `handle_error()`: Hiển thị thông báo lỗi nếu có sự cố với các bước quy trình (ví dụ: mã đơn hàng không hợp lệ hoặc không phải của nhân viên).
+  - `confirm_deletion()`: Xác nhận việc xóa đơn hàng và yêu cầu nhân viên xác nhận lại hành động này.
 4. Lớp Cơ Sở Dữ Liệu Đơn Hàng (Purchase Order Database)
-Trách nhiệm:
-
-Lưu trữ và quản lý các đơn hàng mua trong hệ thống.
-Cung cấp các chức năng để thêm, sửa và xóa các đơn hàng mua.
-Thuộc tính:
-
-purchase_orders: Danh sách tất cả các đơn hàng mua trong hệ thống.
-Phương thức:
-
-add_purchase_order(): Thêm một đơn hàng mới vào cơ sở dữ liệu.
-update_purchase_order(): Cập nhật thông tin của một đơn hàng hiện có.
-delete_purchase_order(): Xóa một đơn hàng khỏi cơ sở dữ liệu.
-retrieve_purchase_order(): Truy xuất thông tin đơn hàng dựa trên mã đơn hàng.
+* Nhiệm vụ:
+  - Lưu trữ và quản lý các đơn hàng mua trong hệ thống.
+  - Cung cấp các chức năng để thêm, sửa và xóa các đơn hàng mua.
+* Thuộc tính:
+  - `purchase_orders`: Danh sách tất cả các đơn hàng mua trong hệ thống.
+* Phương thức:
+  - add_purchase_order(): Thêm một đơn hàng mới vào cơ sở dữ liệu.
+  - update_purchase_order(): Cập nhật thông tin của một đơn hàng hiện có.
+  - delete_purchase_order(): Xóa một đơn hàng khỏi cơ sở dữ liệu.
+  - retrieve_purchase_order(): Truy xuất thông tin đơn hàng dựa trên mã đơn hàng.
 5. Lớp Báo Cáo Lỗi (Error Reporting)
-Trách nhiệm:
-
-Quản lý và thông báo lỗi khi có sự cố xảy ra trong quá trình tạo, cập nhật hoặc xóa đơn hàng.
-Cung cấp thông báo lỗi rõ ràng cho nhân viên để họ có thể xử lý.
-Thuộc tính:
-
-error_code: Mã lỗi để phân loại các lỗi.
-error_message: Thông báo lỗi chi tiết.
-Phương thức:
-
-generate_error_message(): Tạo thông báo lỗi chi tiết dựa trên mã lỗi và ngữ cảnh.
+* Nhiệm vụ:
+  - Quản lý và thông báo lỗi khi có sự cố xảy ra trong quá trình tạo, cập nhật hoặc xóa đơn hàng.
+  - Cung cấp thông báo lỗi rõ ràng cho nhân viên để họ có thể xử lý.
+* Thuộc tính:
+  - `error_code`: Mã lỗi để phân loại các lỗi.
+  - `error_message`: Thông báo lỗi chi tiết.
+* Phương thức:
+  - `generate_error_message()`: Tạo thông báo lỗi chi tiết dựa trên mã lỗi và ngữ cảnh.
 
 ![This is a class diagram]()
 
