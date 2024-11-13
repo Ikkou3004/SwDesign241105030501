@@ -102,10 +102,10 @@ Phân tích lớp
 * Thuộc tính:
   - `purchase_orders`: Danh sách tất cả các đơn hàng mua trong hệ thống.
 * Phương thức:
-  - add_purchase_order(): Thêm một đơn hàng mới vào cơ sở dữ liệu.
-  - update_purchase_order(): Cập nhật thông tin của một đơn hàng hiện có.
-  - delete_purchase_order(): Xóa một đơn hàng khỏi cơ sở dữ liệu.
-  - retrieve_purchase_order(): Truy xuất thông tin đơn hàng dựa trên mã đơn hàng.
+  - `add_purchase_order()`: Thêm một đơn hàng mới vào cơ sở dữ liệu.
+  - `update_purchase_order()`: Cập nhật thông tin của một đơn hàng hiện có.
+  - `delete_purchase_order()`: Xóa một đơn hàng khỏi cơ sở dữ liệu.
+  - `retrieve_purchase_order()`: Truy xuất thông tin đơn hàng dựa trên mã đơn hàng.
 5. Lớp Báo Cáo Lỗi (Error Reporting)
 * Nhiệm vụ:
   - Quản lý và thông báo lỗi khi có sự cố xảy ra trong quá trình tạo, cập nhật hoặc xóa đơn hàng.
@@ -116,7 +116,7 @@ Phân tích lớp
 * Phương thức:
   - `generate_error_message()`: Tạo thông báo lỗi chi tiết dựa trên mã lỗi và ngữ cảnh.
 
-![This is a class diagram]()
+![This is a class diagram](https://www.planttext.com/api/plantuml/png/Z5HBRi8m4Dtd51OhMgdGRb65a5fsbLgL0qJ67i2IF-dOGK9LJzP5ZzGhTEA4W4CARFAPUUFClFSolzy_CnyuXjBeJ6ZkFNjonYZlbRCWvwRGRWV0FZF6xXWqhxcIRC8M0PLTnuJb1j88Efr6xkZ2c43W0VAYHB7X7dA74d1uGyYjKp92oa9UWaZGS0RobJMZl3M0rohVp90MdKmYIX-SeOHmDd0HqknIQKtFEPSIWJwG90jqiXIXYhue7nxhr3JcwezLWr7scMunIio7qlVGj0OBMB6mRp8Erw9QadgusGAgrQufv49Gcn6mTAG8jmTo5ZiVmEoLHNIO6mBpTKV9b33A9QmUUaRuAC67VSjsvJgDSQtaoKpxjYh4Xbkf8O-zfBKanagXoQFmvCnBMXF3V4allPgt0YKbqyCaf6xNMuNh3dw5PoyKzRkuSCUUJ0eGA0RRAqfIYLgEvXMpxr0u30HCf1TETdJ_tn8TZoR0ONBGaMkfYTxDCdWOq8dJU4__rqcpBVoufjUFQyPyrbZtNAdXbhgv36sTCc7A1Xg8Vk2-eWvrayQilgR9P_s7jYVSZqQtfqtIgg4rait0och__W400F__0m00)
 
 ## Login
 Các lớp phân tích
