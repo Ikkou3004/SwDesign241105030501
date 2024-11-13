@@ -120,18 +120,49 @@ Phân tích lớp
 
 ## Login
 Các lớp phân tích
-* Employee: Là đối tượng chính thực hiện hành động đăng nhập.
-  - Thuộc tính liên quan: `employeeID`, `password`.
-  - Nhiệm vụ:
-    + Nhập thông tin đăng nhập (tên đăng nhập và mật khẩu).
-    + Hệ thống xác thực thông tin.
-    + Nếu thông tin đúng, cấp quyền truy cập cho nhân viên vào các chức năng tương ứng với vai trò của họ.
-* Timecard: Gián tiếp liên quan đến quá trình đăng nhập.
-  - Thuộc tính liên quan: `employeeID`.
-  - Nhiệm vụ: Không có nhiệm vụ trực tiếp liên quan đến Use Case Login.
-* PaymentMethod: Gián tiếp liên quan đến quá trình đăng nhập.
-  - Thuộc tính liên quan: Không liên quan trực tiếp.
-  - Nhiệm vụ: Không có nhiệm vụ trực tiếp liên quan đến Use Case Login.
+1. Lớp Người Dùng (User)
+* Nhiệm vụ:
+  - Đại diện cho người dùng muốn đăng nhập vào hệ thống.
+  - Cung cấp tên và mật khẩu khi đăng nhập.
+* Thuộc tính:
+  - `username`: Tên đăng nhập của người dùng.
+  - `password`: Mật khẩu của người dùng (có thể được mã hóa khi lưu trữ).
+* Phương thức:
+  - `enter_credentials()`: Người dùng nhập tên và mật khẩu.
+  - `retry_login()`: Cho phép người dùng thử lại sau khi nhập sai thông tin đăng nhập.
+  - `cancel_login()`: Hủy bỏ quá trình đăng nhập.
+2. Lớp Hệ Thống (System hoặc Authentication System)
+* Nhiệm vụ:
+  - Quản lý và xử lý quá trình đăng nhập cho người dùng.
+  - Kiểm tra thông tin đăng nhập (tên đăng nhập và mật khẩu).
+  - Thông báo lỗi khi tên hoặc mật khẩu không hợp lệ.
+* Thuộc tính:
+  - `login_state`: Trạng thái hiện tại của hệ thống (đang hiển thị màn hình đăng nhập).
+  - `error_message`: Thông báo lỗi khi đăng nhập thất bại.
+* Phương thức:
+  - `validate_credentials(username, password)`: Kiểm tra xem tên đăng nhập và mật khẩu có hợp lệ hay không.
+  - `display_error_message()`: Hiển thị thông báo lỗi khi tên đăng nhập hoặc mật khẩu không hợp lệ.
+  - `login_user()`: Đăng nhập người dùng vào hệ thống nếu thông tin hợp lệ.
+3. Lớp Quản Lý Phiên Đăng Nhập (Session Manager)
+* Nhiệm vụ:
+  - Quản lý phiên đăng nhập của người dùng khi họ đăng nhập thành công.
+  - Lưu trữ và duy trì trạng thái phiên đăng nhập cho người dùng đã đăng nhập.
+* Thuộc tính:
+  - `session_id`: Mã định danh duy nhất cho mỗi phiên đăng nhập.
+  - `user_id`: Mã định danh của người dùng đã đăng nhập.
+  - `login_timestamp`: Thời điểm đăng nhập vào hệ thống.
+* Phương thức:
+  - `create_session(user_id)`: Tạo một phiên đăng nhập mới cho người dùng sau khi xác thực thành công.
+  - `terminate_session()`: Kết thúc phiên đăng nhập khi người dùng đăng xuất hoặc khi phiên hết hạn.
+4. Lớp Báo Cáo Lỗi (Error Reporting)
+* Nhiệm vụ:
+  - Quản lý các thông báo lỗi khi người dùng nhập sai thông tin đăng nhập.
+  - Cung cấp thông báo lỗi cụ thể để người dùng biết vấn đề xảy ra.
+* Thuộc tính:
+  - `error_code`: Mã lỗi cụ thể để phân loại lỗi (ví dụ: lỗi "Tên đăng nhập không tồn tại" hoặc "Mật khẩu không chính xác").
+  - `error_message`: Thông báo lỗi chi tiết để hiển thị cho người dùng.
+* Phương thức:
+  - `generate_error_message(error_code)`: Tạo thông báo lỗi dựa trên mã lỗi cụ thể.
 
 ![This is a class diagram]()
 
