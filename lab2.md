@@ -278,3 +278,71 @@ Các lớp phân tích
   - `generate_error_message(error_code)`: Tạo thông báo lỗi dựa trên mã lỗi cụ thể để hiển thị cho Quản Trị Viên Tiền Lương.
 
 ![This is a class diagram]()
+
+## Run Payroll
+Các lớp phân tích
+1. Lớp Hệ Thống (System)
+* Nhiệm vụ:
+  - Tự động khởi tạo quy trình chạy bảng lương vào mỗi thứ Sáu và ngày làm việc cuối cùng của tháng.
+  - Thu thập thông tin nhân viên, phiếu chấm công và đơn đặt hàng để tính toán tiền lương.
+  - Quản lý phương thức thanh toán và xử lý các giao dịch ngân hàng cho nhân viên.
+* Thuộc tính:
+  - `payroll_date`: Ngày hiện tại mà bảng lương cần được xử lý.
+* Phương thức:
+  - `initiate_payroll()`: Khởi chạy quy trình bảng lương tự động vào những ngày đã chỉ định.
+  - `retrieve_employees_to_pay(payroll_date)`: Lấy danh sách nhân viên đủ điều kiện nhận lương trong ngày.
+  - `calculate_pay(employee)`: Tính toán lương cho nhân viên dựa trên phiếu chấm công, đơn hàng, thông tin lương và khấu trừ.
+  - `process_payment(employee)`: Xử lý thanh toán cho nhân viên qua các phương thức đã chọn (in phiếu hoặc chuyển khoản).
+2. Lớp Nhân Viên (Employee)
+* Nhiệm vụ:
+  - Đại diện cho một nhân viên trong hệ thống, bao gồm các thông tin cá nhân, phương thức nhận lương, và trạng thái xóa.
+  - Cung cấp dữ liệu cần thiết cho quá trình tính lương như bảng chấm công, đơn đặt hàng và mức lương cơ bản.
+* Thuộc tính:
+  - `employee_id`: Mã định danh duy nhất của nhân viên.
+  - `name`: Tên của nhân viên.
+  - `salary_info`: Thông tin về mức lương và các khoản lợi ích.
+  - `payment_method`: Phương thức nhận lương (trực tiếp qua ngân hàng, nhận qua thư hoặc trực tiếp nhận tại công ty).
+  - `is_deleted`: Trạng thái đã được đánh dấu xóa.
+* Phương thức:
+  - `get_payment_method()`: Lấy phương thức thanh toán đã chỉ định của nhân viên.
+  - `mark_for_deletion()`: Đánh dấu nhân viên để xóa sau khi trả lương lần cuối cùng.
+3. Lớp Bảng Chấm Công (Timecard)
+* Nhiệm vụ:
+  - Lưu trữ và cung cấp thông tin về thời gian làm việc của nhân viên, được sử dụng trong tính lương.
+* Thuộc tính:
+  - `timecard_id`: Mã định danh của bảng chấm công.
+  - `employee_id`: Mã định danh nhân viên tương ứng.
+  - `hours_worked`: Số giờ làm việc.
+  - `date`: Ngày ghi nhận thời gian làm việc.
+* Phương thức:
+  - `get_hours_worked()`: Lấy số giờ làm việc của nhân viên từ bảng chấm công.
+4. Lớp Đơn Đặt Hàng (Purchase Order)
+* Nhiệm vụ:
+  - Quản lý thông tin đơn đặt hàng của nhân viên hoa hồng, được sử dụng trong quá trình tính lương để xác định hoa hồng.
+* Thuộc tính:
+  - `purchase_order_id`: Mã định danh của đơn đặt hàng.
+  - `employee_id`: Mã định danh của nhân viên hoa hồng.
+  - `amount`: Số tiền của đơn đặt hàng.
+  -`commission_rate`: Tỷ lệ hoa hồng.
+* Phương thức:
+  - `get_commission()`: Tính toán hoa hồng dựa trên số tiền đơn đặt hàng và tỷ lệ hoa hồng.
+5. Lớp Giao Dịch Ngân Hàng (Bank Transaction)
+* Nhiệm vụ:
+  - Xử lý và gửi các giao dịch ngân hàng cho nhân viên nhận lương qua hình thức chuyển khoản trực tiếp.
+* Thuộc tính:
+  - `transaction_id`: Mã định danh của giao dịch.
+  - `employee_id`: Mã định danh của nhân viên.
+  - `amount`: Số tiền giao dịch.
+  - `status`: Trạng thái giao dịch (đang xử lý, đã hoàn thành, thất bại).
+* Phương thức:
+  - `send_to_bank()`: Gửi giao dịch đến hệ thống ngân hàng.
+6. Lớp Báo Cáo Lỗi (Error Reporting)
+* Nhiệm vụ:
+  - Quản lý và hiển thị thông báo lỗi khi không thể thực hiện giao dịch ngân hàng hoặc các lỗi khác trong quá trình xử lý bảng lương.
+* Thuộc tính:
+  - `error_code`: Mã lỗi (ví dụ: hệ thống ngân hàng không khả dụng).
+  - `error_message`: Thông báo chi tiết về lỗi.
+* Phương thức:
+  - `generate_error_message(error_code)`: Tạo và hiển thị thông báo lỗi cho Quản Trị Viên.
+ 
+![This is a class diagram]()
