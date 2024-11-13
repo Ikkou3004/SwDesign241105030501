@@ -168,15 +168,57 @@ Các lớp phân tích
 
 ## Create Administrative Report
 Các lớp phân tích
-* Employee: Là đối tượng được báo cáo trong nhiều loại báo cáo quản trị.
-  - Thuộc tính liên quan: `employeeID`, `name`, `department`, `role`, `performance`.
-  - Nhiệm vụ: Không trực tiếp thực hiện hành động tạo báo cáo.
-* Timecard: Cung cấp dữ liệu để tính toán các chỉ số hiệu suất liên quan đến thời gian làm việc.
-  - Thuộc tính liên quan: `employeeID`, `date`, `hoursWorked`.
-  - Nhiệm vụ: Không trực tiếp thực hiện hành động tạo báo cáo.
-* PaymentMethod: Có thể được sử dụng để tạo báo cáo về chi phí nhân công và các khoản thanh toán.
-  - Thuộc tính liên quan: `paymentMethodID`, `methodType`.
-  - Nhiệm vụ: Không trực tiếp thực hiện hành động tạo báo cáo.
+1. Lớp Quản Trị Viên Tiền Lương (Payroll Administrator)
+* Nhiệm vụ:
+  - Khởi tạo yêu cầu tạo báo cáo.
+  - Cung cấp các thông tin cần thiết để tạo báo cáo, bao gồm loại báo cáo, ngày bắt đầu, ngày kết thúc và tên nhân viên.
+  - Quyết định có lưu báo cáo sau khi tạo xong hay không.
+* Thuộc tính:
+  - `administrator_id`: Mã định danh duy nhất của Quản Trị Viên Tiền Lương.
+  - `name`: Tên của Quản Trị Viên Tiền Lương.
+* Phương thức:
+  - `request_report()`: Khởi tạo yêu cầu tạo báo cáo với các tiêu chí cần thiết.
+  - `save_report()`: Yêu cầu hệ thống lưu báo cáo sau khi đã tạo xong.
+  - `discard_report()`: Hủy bỏ báo cáo nếu không cần lưu lại.
+2. Lớp Báo Cáo (Report)
+* Nhiệm vụ:
+  - Đại diện cho báo cáo được tạo dựa trên các tiêu chí của Quản Trị Viên Tiền Lương.
+  - Lưu trữ thông tin liên quan đến báo cáo, bao gồm loại báo cáo, ngày bắt đầu, ngày kết thúc, và danh sách nhân viên liên quan.
+* Thuộc tính:
+  - `report_id`: Mã định danh duy nhất của báo cáo.
+  - `report_type`: Loại báo cáo (Tổng số giờ làm việc hoặc Lương từ đầu năm đến nay).
+  - `start_date`: Ngày bắt đầu của báo cáo.
+  - `end_date`: Ngày kết thúc của báo cáo.
+  - `employee_names`: Danh sách tên của các nhân viên trong báo cáo.
+* Phương thức:
+  - `generate_report()`: Tạo báo cáo dựa trên các tiêu chí do Quản Trị Viên Tiền Lương cung cấp.
+  - `display_report()`: Hiển thị báo cáo đã tạo.
+  - `save_to_location(location, name)`: Lưu báo cáo tại vị trí và tên file do Quản Trị Viên Tiền Lương chỉ định.
+3. Lớp Hệ Thống (System)
+* Nhiệm vụ:
+  - Xử lý yêu cầu tạo báo cáo từ Quản Trị Viên Tiền Lương.
+  - Xác thực các thông tin cần thiết cho báo cáo (loại báo cáo, ngày tháng, danh sách nhân viên).
+  - Thông báo lỗi nếu thiếu thông tin hoặc có lỗi trong quá trình tạo báo cáo.
+  - Yêu cầu lưu báo cáo nếu Quản Trị Viên Tiền Lương muốn lưu báo cáo.
+* Thuộc tính:
+  - `login_state`: Trạng thái đăng nhập hiện tại của hệ thống (xác nhận Quản Trị Viên Tiền Lương đã đăng nhập).
+  - `error_message`: Thông báo lỗi nếu có sự cố khi tạo báo cáo.
+* Phương thức:
+  - `request_criteria()`: Yêu cầu Quản Trị Viên Tiền Lương nhập các tiêu chí cần thiết để tạo báo cáo.
+  - `validate_criteria()`: Xác thực tiêu chí do Quản Trị Viên Tiền Lương cung cấp.
+  - `display_error_message()`: Hiển thị thông báo lỗi nếu có sự cố.
+  - `save_report_prompt()`: Hiển thị thông báo yêu cầu lưu báo cáo nếu Quản Trị Viên Tiền Lương muốn lưu.
+4. Lớp Báo Cáo Lỗi (Error Reporting)
+* Nhiệm vụ:
+  - Quản lý các thông báo lỗi khi có thông tin không đầy đủ hoặc không hợp lệ trong quá trình tạo báo cáo.
+  - Cung cấp thông báo lỗi chi tiết để Quản Trị Viên Tiền Lương có thể xử lý.
+* Thuộc tính:
+  - `error_code`: Mã lỗi cụ thể để phân loại các lỗi (ví dụ: thiếu ngày bắt đầu hoặc tên nhân viên không tồn tại).
+  - `error_message`: Thông báo lỗi chi tiết để hiển thị cho Quản Trị Viên Tiền Lương.
+* Phương thức:
+  - `generate_error_message(error_code)`: Tạo thông báo lỗi dựa trên mã lỗi cụ thể.
+
+![This is a class diagram]()
 
 ## Maintain Employee Info
 Các lớp phân tích
