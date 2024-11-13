@@ -50,7 +50,7 @@ Phân tích lớp
   - `handle_error()`: Hiển thị thông báo lỗi và xử lý các thông tin thiếu hoặc không hợp lệ.
   - `save_report()`: Lưu báo cáo, tương tác với hệ thống lưu trữ file.
 
-![This is a class diagram]()
+![This is a class diagram](https://www.planttext.com/api/plantuml/png/d5HBJiCm4Dtd51OhM7J1ja9L5x032RK7i5nxI8rYEymuaIh4oLXm9Ax0rFcqRaE5sCJApFZDUsziVtz-BIagZ8sh2bqf8l7WwYhi0CHx8SHCGFyhhH5piOveVPaINZd88mPgHdBWOnQVyKS8XBS6A4g4Ec2KSLV3zGtNjS6QL51ZQAq1QLG4obC45UWezLPX2T8tRWDuKg5QwA7pXB6a5Pgpt4VHorsbH2_sY5mkRGEbzOaQn-zvwRpnvYoMaSn1TF3nr1pnOYkGLT0gsk0dV2l10pBufBh_otx6yCgUFYclIjYFZ0MeZQ9Xx9aCuksFbk9THsvnF5ME09F8wrF3RCVOUBsZ26uuN8W1fGCYPf7xqZ7dM3UWGyjMLTOS394QRGIqAZVWecrRvGsxdhh_mL3cFbwAgzih9h98wsgWg17sXxRejKtMkEGqJIFzFetvS76e7udeB9xgTHcb6zG9p2JdaU9yD9k4zNKJYoKV-VrJyGC00F__0m00)
 
 ## Maintain Purchase Order
   Các lớp phân tích:
