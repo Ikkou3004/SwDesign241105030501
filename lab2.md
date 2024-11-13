@@ -218,7 +218,7 @@ Các lớp phân tích
 * Phương thức:
   - `generate_error_message(error_code)`: Tạo thông báo lỗi dựa trên mã lỗi cụ thể.
 
-![This is a class diagram]()
+![This is a class diagram](https://www.planttext.com/api/plantuml/png/b5D1JiCm4Bpx5LPFBQ87hX6gYWGt3eW-8Dh6gzIIOmTxMnGXNiQ19_45DecRrasAn2MEPjRhcLdxv-jx7GWyxIiZ2WCXo1Tel3FcGLNQwa0Uo7dv8QHSIZZ7Sgra9ZVajIqxraA52RBaZvGUt_OOAFTOEq_p1PSSd5OT5-20auJIeG2lHjodY2fVEoBgwgj6WY9CJPtgaftZN06r-2Cl7OfMZR6gDgv1p5jpWPbdjd_VjrgTF9PeaKEvwgKsq5mFW5nkN06adPqVVmR1jsckuoGsJI2iOXB6bThcx8ykBAFtF3Bs4A3yQqg5ruHUGohp04QtqQJqrZc3O1EJoJbNXvtNtbNrr5oVsltzS5bVTDKtBPpwfwbXBAcgYNQBqswMCla4PdSpxhlgrfXv9hNbEA2W8DyrxKJ4pqlZHSq6CM6gwi9s9dTWbU4RrsaD8dOPjjpCfjzfTXmaAhbjX5ZpfMwVzYy0003__mC0)
 
 ## Maintain Employee Info
 Các lớp phân tích
@@ -277,7 +277,7 @@ Các lớp phân tích
 * Phương thức:
   - `generate_error_message(error_code)`: Tạo thông báo lỗi dựa trên mã lỗi cụ thể để hiển thị cho Quản Trị Viên Tiền Lương.
 
-![This is a class diagram]()
+![This is a class diagram](https://www.planttext.com/api/plantuml/png/b5HBRjmm3Dtx5CAicW9PTEj5aGBjlcWE86WipfY0H3gIF8LQz6HPv4YvGcYF9nuvQe1iB86VH_BnoS-FJtSncP16xvhEcHZLJvC3E_VDUYICAPZ4GVrjbBfLvjgcqQfMtQU0T9ozP3mKbblvA1NWOOIOjB5MWnySPu1FDn9uOhH5n3XOas0DkbokArKJBJZuK6B7TC3Wpud8jFRphrbe-B5WBAFN8EjJhw4f3nkND-ZaFd4HG8eKpg5d0asZtqCeFJsFmMKjj4zuttdSEvWTqJWJScdhs7kCKQQg94n8sg77LDe7aoSoy0GXQm-fPrjPvVKADTA1oprkzbU9s2xgBUttEIRm2-cEZqXQz9cs58SW0lH2eJc-fxd3I5svtybxCWutdTh_QcRFxC3GkNsCWnEcYl8bzW59qF_0AgrtnRZAROBy1GE79FwBwEOw7TiFZdy4WZ0FM3HQWRjPiwMLwjFVVTa9xjVvNBRJAgGa5ReKrMzCVRFONqC_xzRtquhgISh7Dr5oRiPkLM_8EeZd4MFpYdATL6splImThDhdfha3ijDFxGK00F__0m00)
 
 ## Run Payroll
 Các lớp phân tích
@@ -345,4 +345,4 @@ Các lớp phân tích
 * Phương thức:
   - `generate_error_message(error_code)`: Tạo và hiển thị thông báo lỗi cho Quản Trị Viên.
  
-![This is a class diagram]()
+![This is a class diagram](https://www.planttext.com/api/plantuml/png/f5JDQXin4BxlKmYVjWKVUZKbX90S2eMM9dUXx4wymfB6ZBG9flJ9UkWZzHKwahM_bg6GoowQ-RxHDt_w-_lFhG-AGczDrHZblNWy-G1M_Ao4s8gZEX4Q8riLGEp4FV-YVSiV8RJJGRD5PbJzWI6lgDla9GYauHKasAF14u2N0IEqBWIDpA_QXyyF6NoJOZJADBt9LzH38COEiCYxn_xPGC8V2HlmFg8jk72DaJJ-gdB2WoUdF72aRXdwo4cuVN8uPM5fySeeEadjNZ0wqkaB7uRIHGtIGkXm5KfxsOA10D5-XsX0kQckUmXooKwL7Vb2M4K7-O9qZgBHrPTfFMaBZQ8sfnNoyIAjg_bss9ENRqY797CiyrOKfo6gdbFgMMz6KTzxQZhbuHkrGCECPPl4QFn_VSfYxy9IMOFMQk-v8fAooD4voPnGHP5toXsUI3clcbZReO2JvNqQUTz2xnUuipGFheqxyipt5nhwG8Jq0uv8WMd3j4OZ9zIkHlDijxmCQW-5k_RW85P8Be1r8Tniz5XAVXqsdpOSwKPiFcwc_TcDE--5SksmZU1Bh74yvwmqF-8yFoNISdpcpAcbnTlMBTrDukQDlUJoVrNtdUWuESF4L2nVLMC1hkJ7pSCcFfIjUDEXA-FNgQr9rIrFHtob_m400F__0m00)
