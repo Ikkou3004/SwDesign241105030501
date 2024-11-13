@@ -222,23 +222,59 @@ Các lớp phân tích
 
 ## Maintain Employee Info
 Các lớp phân tích
-* Employee: Là đối tượng chính được quản lý trong Use Case này.
-  - Thuộc tính liên quan: `employeeID`, `name`, `department`, `role`, `contactInfo`, `address`, `emergencyContact`.
-  - Nhiệm vụ: Không trực tiếp thực hiện hành động cập nhật thông tin.
-* Timecard: Gián tiếp liên quan đến việc cập nhật thông tin nhân viên.
-  - Thuộc tính liên quan: `employeeID`.
-  - Nhiệm vụ: Không trực tiếp thực hiện hành động cập nhật thông tin.
-* PaymentMethod: Gián tiếp liên quan đến việc cập nhật thông tin nhân viên.
-  - Thuộc tính liên quan: `employeeID`.
-  - Nhiệm vụ: Không trực tiếp thực hiện hành động cập nhật thông tin.
+1. Lớp Quản Trị Viên Tiền Lương (Payroll Administrator)
+* Nhiệm vụ:
+  - Khởi tạo yêu cầu thêm, cập nhật hoặc xóa thông tin nhân viên trong hệ thống.
+  - Cung cấp thông tin cần thiết để thêm, sửa, hoặc xóa nhân viên.
+  - Xác nhận các thao tác (như xóa nhân viên) khi hệ thống yêu cầu.
+* Thuộc tính:
+  - `administrator_id`: Mã định danh duy nhất của Quản Trị Viên Tiền Lương.
+  - `name`: Tên của Quản Trị Viên Tiền Lương.
+* Phương thức:
+  - `request_add_employee()`: Khởi tạo yêu cầu thêm mới một nhân viên với thông tin chi tiết.
+  - `request_update_employee(employee_id)`: Khởi tạo yêu cầu cập nhật thông tin của một nhân viên cụ thể.
+  - `request_delete_employee(employee_id)`: Khởi tạo yêu cầu xóa một nhân viên cụ thể.
+  - `confirm_deletion()`: Xác nhận việc xóa nhân viên khỏi hệ thống.
+2. Lớp Nhân Viên (Employee)
+* Nhiệm vụ:
+  - Đại diện cho một nhân viên trong hệ thống, bao gồm các thông tin cần thiết để tính lương và quản lý nhân viên.
+  - Lưu trữ và quản lý các thông tin cá nhân, mức lương, và phương thức thanh toán của nhân viên.
+* Thuộc tính:
+  - `employee_id`: Mã định danh duy nhất của nhân viên.
+  - `name`: Tên của nhân viên.
+  - `employee_type`: Loại nhân viên (theo giờ, lương cố định, hoặc hoa hồng).
+  - `mailing_address`: Địa chỉ liên lạc.
+  - `phone_number`: Số điện thoại.
+  - `hourly_rate`: Mức lương theo giờ (cho nhân viên làm việc theo giờ).
+  - `salary`: Mức lương cố định (cho nhân viên lương cố định và nhân viên hoa hồng).
+  - `commission_rate`: Tỷ lệ hoa hồng (cho nhân viên hoa hồng).
+  - `hour_limit`: Giới hạn giờ làm việc (nếu có).
+  - `pay_delivery_method`: Phương thức nhận lương (mặc định là "nhận trực tiếp").
+* Phương thức:
+  - `add_employee_info()`: Thêm thông tin nhân viên vào hệ thống.
+  - `update_employee_info()`: Cập nhật thông tin nhân viên hiện tại.
+  - `delete_employee()`: Xóa nhân viên khỏi hệ thống.
+3. Lớp Hệ Thống (System)
+* Nhiệm vụ:
+  - Xử lý các yêu cầu của Quản Trị Viên Tiền Lương về việc thêm, cập nhật, hoặc xóa nhân viên.
+  - Xác thực và lưu trữ thông tin của nhân viên mới vào hệ thống, đồng thời hiển thị các lỗi nếu không tìm thấy nhân viên hoặc thông tin không đầy đủ.
+  - Đánh dấu nhân viên cần xóa và xử lý trong chu kỳ trả lương tiếp theo.
+* Thuộc tính:
+  - `login_state`: Trạng thái đăng nhập hiện tại của hệ thống, đảm bảo Quản Trị Viên Tiền Lương đã đăng nhập.
+  - `error_message`: Thông báo lỗi khi có vấn đề trong quá trình xử lý.
+* Phương thức:
+  - `request_function()`: Yêu cầu Quản Trị Viên Tiền Lương chọn chức năng (thêm, sửa, hoặc xóa nhân viên).
+  - `validate_employee_id(employee_id)`: Xác thực mã nhân viên để kiểm tra sự tồn tại trong hệ thống.
+  - `display_error_message()`: Hiển thị lỗi nếu có vấn đề (ví dụ: không tìm thấy nhân viên).
+  - `finalize_deletion(employee_id)`: Đánh dấu nhân viên cần xóa và lên lịch cho lần thanh toán cuối cùng.
+4. Lớp Báo Cáo Lỗi (Error Reporting)
+* Nhiệm vụ:
+  - Quản lý và hiển thị thông báo lỗi nếu có thông tin không hợp lệ hoặc không tìm thấy nhân viên.
+  - Cung cấp các thông tin lỗi chi tiết để Quản Trị Viên Tiền Lương có thể xử lý.
+* Thuộc tính:
+  - `error_code`: Mã lỗi để xác định vấn đề (ví dụ: mã nhân viên không tồn tại).
+  - `error_message`: Thông báo chi tiết về lỗi.
+* Phương thức:
+  - `generate_error_message(error_code)`: Tạo thông báo lỗi dựa trên mã lỗi cụ thể để hiển thị cho Quản Trị Viên Tiền Lương.
 
-  ## Run Payroll
-* Employee: Là đối tượng nhận lương.
-  - Thuộc tính liên quan: `employeeID`, `name`, `salary`, `paymentInfo`.
-  - Nhiệm vụ: Không trực tiếp thực hiện hành động chạy bảng lương.
-* Timecard: Cung cấp dữ liệu về thời gian làm việc để tính toán lương.
-  - Thuộc tính liên quan: `employeeID`, `date`, `hoursWorked`.
-  - Nhiệm vụ: Không trực tiếp thực hiện hành động chạy bảng lương.
-* PaymentMethod: Xác định phương thức thanh toán lương cho nhân viên.
-  - Thuộc tính liên quan: `paymentMethodID`, `methodType`, `bankAccount`.
-  - Nhiệm vụ: Không trực tiếp thực hiện hành động chạy bảng lương.
+![This is a class diagram]()
