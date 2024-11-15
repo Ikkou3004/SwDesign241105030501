@@ -46,3 +46,18 @@
 | Print Service | PrinterAccess trong External System Interfaces |
 | Report Generation | ReportGenerationModule trong PayrollControllerProcess |
 
+
+## Design element to owning package map
+
+| Design Element | "Owning" Package |
+| ----------------- | ------------------ |
+| Employee | PayrollDB |
+| Payroll Administrator | Applications::AdminInterface, Applications::PayrollControllerProcess |
+| Timecard | Applications::TimecardDBManager |
+| Project Management Database | ExternalSystemInterfaces::ProjectManagementDBAccess |
+| Purchase Order | PayrollDBManager |
+| Bank System | ExternalSystemInterfaces::BankSystemAccess |
+| Print Service | ExternalSystemInterfaces::PrinterAccess |
+| Report Generation | Applications::PayrollControllerProcess::ReportGenerationModule |
+
+
