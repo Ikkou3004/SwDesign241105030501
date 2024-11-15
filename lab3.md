@@ -35,7 +35,14 @@
 
 ## Analysis class to design element map
 
-| Syntax | Description |
+| Analysis class | Design Element |
 | ----------- | ----------- |
-| Header | Title |
-| Paragraph | Text |
+| Employee | Employee class trong PayrollDB |
+| Payroll Administrator | AdminInterface class và PayrollControllerProcess |
+| Timecard | TimecardDBManager |
+| Project Management Database | ProjectManagementDBAccess trong External System Interfaces |
+| Purchase Order | PurchaseOrder class trong PayrollDBManager |
+| Bank System | BankSystemAccess trong External System Interfaces |
+| Print Service | PrinterAccess trong External System Interfaces |
+| Report Generation | ReportGenerationModule trong PayrollControllerProcess |
+
