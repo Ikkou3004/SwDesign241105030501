@@ -22,6 +22,20 @@
 
 3. ProjectManagementDatabase subsystems
 
-![This is a class diagram]()
+![This is a class diagram](https://www.planttext.com/api/plantuml/png/f5FBQiCm4BphA_RM1c9o3y84aXu2RGdzWuszZbLaoKZh4DFsothe9_KNAlb5Gabwg6-sPaUpC-Flpw-LPtJSL5hSmOOAPGWyaoFBRKqU2kiWiuQTrNDG9fmKcD4SVBFtRG1MSq2J0nbMt8h0iSCsOFMwdz7a0Ft809b6xu5BvC2bM267AsfdNodZn94Expdao0YOPUIzw0T-SqevKAOfl0a8ps811N5MZdIGbUWE1AQfzkJy_KnyH7dRSOLkirsFVKA31wh24fjmznuz0Ll8UpSwEOxOAJgYXegujBcOh83jTP9U6OpJjEuaFG-AgAgrROcs-J8wErl2e_8ipq5fBphSS6h_4EoeTkHZ3kOG7ARW83T1xnJKwELL1YadR3Jnr4xU_d-3XwuVG_uNKi_1mN96fSVOBuwax3kMff7l9NP5MUDBLVkkWLqWOUVuKVmkJ9Aajv9Q3eMRsjEbVbGeRWp9zoIvxkUjoQZcV3iXLcJo-1F-0000__y30000)
 
 * Giải thích:
+  - PayrollController: Đây là lớp điều khiển chính trong hệ thống bảng lương. Nó có nhiệm vụ khởi tạo quy trình truy xuất các mã công trình (charge numbers) của nhân viên, để phục vụ cho các báo cáo hoặc tính toán lương liên quan đến dự án.
+
+  - IProjectManagementDatabase: Là giao diện định nghĩa phương thức retrieveChargeNumbers(employeeId: int): List<ChargeNumber> để lấy danh sách mã công trình của nhân viên. Giao diện này cho phép PayrollController truy cập dữ liệu dự án mà không cần biết chi tiết của hệ thống con.
+
+  - ProjectManagementDatabase: Là hệ thống con thực tế chứa và quản lý dữ liệu dự án. ProjectManagementDatabase triển khai giao diện IProjectManagementDatabase và thực hiện phương thức retrieveChargeNumbers để trả về danh sách mã công trình.
+
+  - ChargeNumber: Lớp này đại diện cho mã công trình, bao gồm các thông tin chi tiết liên quan đến các dự án mà nhân viên đã tham gia.
+
+## Analysis class to design element map
+
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |
