@@ -13,6 +13,12 @@ I. Login
     - Người dùng có thể sử dụng các chức năng của hệ thống cho phép
   * Ngoại lệ:
     - Người dùng nhập sai username hoặc password: hệ thống thông báo "Sai tài khoản"
+  * Lý do:
+    - Bảo mật hệ thống: Đảm bảo chỉ người dùng có thông tin xác thực hợp lệ mới được truy cập, giúp bảo vệ dữ liệu và hệ thống khỏi truy cập trái phép.
+    - Xác thực người dùng: Kiểm tra Tên đăng nhập và Mật khẩu với cơ sở dữ liệu để ngăn chặn truy cập bất hợp pháp.
+    - Xử lý các trường hợp ngoại lệ: Thông báo lỗi khi đăng nhập thất bại do thông tin sai hoặc tài khoản bị khóa, giúp cải thiện trải nghiệm người dùng.
+    - Dễ mở rộng: Thiết kế này dễ tích hợp các tính năng bảo mật cao hơn như xác thực hai yếu tố trong tương lai.
+    - Cấu trúc đơn giản: Quy trình rõ ràng và dễ hiểu, thuận tiện cho phát triển và bảo trì.
 
 ![This is a class diagram]()
 
@@ -38,9 +44,16 @@ II. Maintain Timecard
     - Thông tin thời gian làm việc của nhân viên đã được cập nhật và lưu vào cơ sở dữ liệu.
     - Bộ phận quản lý dự án có thể xem thông tin cập nhật mới nhất của thẻ chấm công nếu cần.
  * Các trường hợp ngoại lệ:
-   - Dữ liệu thẻ chấm công không hợp lệ: Nếu nhân viên nhập sai mã dự án hoặc dữ liệu giờ làm không hợp lệ, hệ thống sẽ hiển thị thông báo lỗi và yêu cầu sửa lại.
-   - Lỗi kết nối với cơ sở dữ liệu: Nếu hệ thống không thể lấy mã dự án từ cơ sở dữ liệu quản lý dự án, hệ thống sẽ thông báo lỗi kết nối và yêu cầu nhân viên thử lại sau.
-   - Lỗi khi lưu thẻ chấm công: Nếu quá trình lưu thẻ chấm công thất bại, hệ thống sẽ thông báo lỗi và không cập nhật dữ liệu mới.
+    - Dữ liệu thẻ chấm công không hợp lệ: Nếu nhân viên nhập sai mã dự án hoặc dữ liệu giờ làm không hợp lệ, hệ thống sẽ hiển thị thông báo lỗi và yêu cầu sửa lại.
+    - Lỗi kết nối với cơ sở dữ liệu: Nếu hệ thống không thể lấy mã dự án từ cơ sở dữ liệu quản lý dự án, hệ thống sẽ thông báo lỗi kết nối và yêu cầu nhân viên thử lại sau.
+    - Lỗi khi lưu thẻ chấm công: Nếu quá trình lưu thẻ chấm công thất bại, hệ thống sẽ thông báo lỗi và không cập nhật dữ liệu mới.
+ * Lý do:
+    - Quản lý thời gian làm việc chính xác: Chức năng này cho phép nhân viên ghi lại giờ làm việc, giúp hệ thống tính lương dựa trên dữ liệu thời gian chính xác.
+    - Truy cập mã dự án: Thiết kế cho phép hệ thống lấy mã dự án từ cơ sở dữ liệu, giúp đảm bảo rằng giờ làm việc được phân bổ đúng vào các dự án, thuận lợi cho việc quản lý và báo cáo.
+    - Lưu trữ và cập nhật thông tin: Việc lưu lại thẻ chấm công sau khi cập nhật giúp hệ thống có dữ liệu chính xác cho tính toán lương và báo cáo sau này.
+    - Xử lý ngoại lệ: Thiết kế bao gồm các xử lý ngoại lệ như lỗi nhập dữ liệu hoặc lỗi kết nối, giúp duy trì tính chính xác và ổn định của dữ liệu.
+    - Cấu trúc rõ ràng, dễ mở rộng: Quy trình các bước rõ ràng giúp nhân viên dễ sử dụng và cho phép mở rộng khi có nhu cầu tích hợp thêm chức năng.
+
 
 ![This is a class diagram]()
 
@@ -77,6 +90,12 @@ III. Run Payroll
      - Lỗi kết nối với máy in: Hệ thống không thể in phiếu lương và ghi nhận lỗi.
      - Lỗi kết nối với ngân hàng: Nếu giao dịch thanh toán thất bại, hệ thống sẽ lưu lại lỗi và gửi thông báo cho bộ phận liên quan.
      - Thiếu thông tin thẻ chấm công hoặc đơn đặt hàng: Hệ thống hiển thị thông báo lỗi và không thể tính toán số tiền lương.
+   * Lý do
+     - Tự động hóa quy trình tính lương: Chức năng này giúp hệ thống tự động tính và phát lương vào ngày trả lương, giảm thiểu công việc thủ công và sai sót.
+     - Tính toán lương chính xác: Quy trình lấy dữ liệu từ thẻ chấm công, đơn đặt hàng, và phương thức thanh toán đảm bảo việc tính lương chính xác cho từng nhân viên dựa trên giờ làm và các quy định.
+     - In phiếu lương và gửi giao dịch đến ngân hàng: Thiết kế này bao gồm cả in phiếu lương và gửi giao dịch ngân hàng, đảm bảo nhân viên nhận được lương đúng hạn.
+     - Xử lý ngoại lệ: Quy trình xử lý các trường hợp như lỗi in phiếu lương hoặc lỗi kết nối với ngân hàng, giúp hệ thống hoạt động ổn định và liên tục.
+     - Mở rộng dễ dàng: Thiết kế này dễ tích hợp các tính năng bổ sung như gửi thông báo lương qua email hoặc xử lý nhiều phương thức thanh toán khác nhau.
 
 ![This is a class diagram]()
 
