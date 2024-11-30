@@ -173,5 +173,44 @@
   - Được tạo và cập nhật thông qua **TimecardController**.
 
 ---
+# Payroll System - Thiết kế hệ thống con: Login (with Security)
+
+## 1. Hệ thống con: MainEmployeeForm
+- **Mô tả**: Giao diện chính cho phép nhân viên thực hiện đăng nhập và truy cập các thao tác sau khi đăng nhập thành công.
+- **Chức năng chính**:
+  - `start()`: Bắt đầu quy trình đăng nhập.
+  - `open()`: Mở giao diện đăng nhập.
+  - `setupSecurityContext()`: Thiết lập ngữ cảnh bảo mật sau khi đăng nhập thành công.
+  - `close()`: Đóng giao diện sau khi hoàn thành đăng nhập.
+  - `displayAvailOperations()`: Hiển thị các thao tác khả dụng sau khi đăng nhập.
+- **Tương tác**:
+  - Kết nối với **LoginForm** để xác thực thông tin đăng nhập.
+  - Kết nối với **EmployeeSession** để duy trì ngữ cảnh bảo mật.
+
+---
+
+## 2. Hệ thống con: LoginForm
+- **Mô tả**: Giao diện nhập thông tin đăng nhập của nhân viên.
+- **Chức năng chính**:
+  - `enterUserName()`: Nhập tên người dùng.
+  - `enterPassword()`: Nhập mật khẩu.
+  - `loginUser()`: Xác thực thông tin đăng nhập.
+  - `validateUserIDPassword()`: Kiểm tra tính hợp lệ của thông tin đăng nhập (tên người dùng và mật khẩu).
+- **Tương tác**:
+  - Gửi thông tin đăng nhập đến **EmployeeSession** để xác thực.
+
+---
+
+## 3. Hệ thống con: EmployeeSession (ISecureUser)
+- **Mô tả**: Xác thực và duy trì trạng thái phiên đăng nhập an toàn cho nhân viên.
+- **Chức năng chính**:
+  - `setupSecurityContext()`: Thiết lập ngữ cảnh bảo mật cho nhân viên sau khi đăng nhập thành công.
+  - `getUserContext()`: Trả về thông tin ngữ cảnh hiện tại của người dùng.
+  - `new(UserID)`: Tạo phiên làm việc mới cho người dùng dựa trên UserID đã xác thực.
+- **Tương tác**:
+  - Cung cấp thông tin ngữ cảnh cho **MainEmployeeForm**.
+  - Kiểm tra và duy trì phiên làm việc an toàn.
+
+---
 
 
