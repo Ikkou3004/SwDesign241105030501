@@ -96,14 +96,82 @@
   - Nhận dữ liệu phiếu lương từ **PaymentMethod** và thực hiện in.
 
 ---
+# Payroll System - Thiết kế hệ thống con: Maintain Timecard
 
-## Quy trình hoạt động tổng quan
-1. **System Clock Interface** khởi động quy trình bằng cách gọi `runPayroll()` trong **PayrollController**.
-2. **PayrollController** lấy dữ liệu nhân viên từ **PayrollDBManager** và:
-   - Thu thập dữ liệu chấm công hoặc đơn đặt hàng.
-   - Tính toán lương qua **Employee**.
-   - Tạo phiếu lương và chuyển tới **PaymentMethod** để xử lý thanh toán.
-3. **PaymentMethod** thực hiện thanh toán bằng cách:
-   - Gửi thông tin giao dịch đến **Bank System** để gửi ngân hàng.
-   - Hoặc chuyển dữ liệu phiếu lương đến **Print Service** để in.
-4. Kết quả trả về **PayrollController**, hoàn thành quy trình.
+## 1. Hệ thống con: Timecard Form
+- **Mô tả**: Giao diện người dùng cho phép nhân viên quản lý thông tin chấm công.
+- **Chức năng chính**:
+  - `open(SecureUser)`: Khởi tạo phiên làm việc an toàn cho nhân viên.
+  - `displayTimecard(timecard)`: Hiển thị thông tin chấm công hiện tại.
+  - `displayChargeCodes(chargeCodes)`: Hiển thị danh sách mã chi phí.
+  - `updateTimecard(timecard)`: Cho phép nhân viên cập nhật thông tin chấm công.
+  - `saveTimecard()`: Lưu thông tin chấm công đã thay đổi.
+- **Tương tác**:
+  - Gửi yêu cầu đến **TimecardController** để thực hiện các thao tác trên dữ liệu.
+
+---
+
+## 2. Hệ thống con: TimecardController
+- **Mô tả**: Điều phối toàn bộ quy trình duy trì thông tin chấm công.
+- **Chức năng chính**:
+  - `getTimecard(employeeId)`: Lấy dữ liệu chấm công của nhân viên từ cơ sở dữ liệu.
+  - `saveTimecard(timecard)`: Lưu thông tin chấm công đã được cập nhật.
+  - `updateTimecard(timecard)`: Cập nhật nội dung chấm công.
+  - `getChargeNumbers()`: Lấy danh sách mã chi phí từ hệ thống quản lý dự án.
+- **Tương tác**:
+  - Gọi **PayrollDBManager** để truy xuất hoặc lưu dữ liệu chấm công.
+  - Kết nối với **Project Management Database** để lấy danh sách mã chi phí.
+
+---
+
+## 3. Hệ thống con: PayrollDBManager
+- **Mô tả**: Quản lý thông tin chấm công trong cơ sở dữ liệu của hệ thống Payroll.
+- **Chức năng chính**:
+  - `getTimecard(employeeId, date)`: Lấy thông tin chấm công theo nhân viên và ngày.
+  - `saveTimecard(timecard)`: Lưu thông tin chấm công mới vào cơ sở dữ liệu.
+- **Tương tác**:
+  - Cung cấp dữ liệu cho **TimecardController**.
+
+---
+
+## 4. Hệ thống con: EmployeeSession
+- **Mô tả**: Xác minh và duy trì quyền truy cập của nhân viên.
+- **Chức năng chính**:
+  - `checkAccess(employeeId)`: Xác nhận rằng nhân viên có quyền truy cập vào thông tin chấm công của họ.
+- **Tương tác**:
+  - Được gọi bởi **TimecardController** để xác thực quyền truy cập của nhân viên.
+
+---
+
+## 5. Hệ thống con: TimecardAccess - SecurityAccess
+- **Mô tả**: Đảm bảo quyền bảo mật và phân quyền cho việc truy cập thông tin chấm công.
+- **Chức năng chính**:
+  - `setAccess(employeeId, accessLevel)`: Gán quyền truy cập cho nhân viên.
+  - `checkAccess(employeeId)`: Kiểm tra quyền truy cập theo nhân viên.
+- **Tương tác**:
+  - Kết nối với **EmployeeSession** và **TimecardController**.
+
+---
+
+## 6. Hệ thống con: Project Management Database
+- **Mô tả**: Hệ thống quản lý dự án cung cấp thông tin mã chi phí liên quan đến các dự án.
+- **Chức năng chính**:
+  - `getChargeNumbers(projectId)`: Trả về danh sách mã chi phí liên quan đến một dự án cụ thể.
+- **Tương tác**:
+  - Cung cấp dữ liệu mã chi phí cho **TimecardController**.
+
+---
+
+## 7. Hệ thống con: Timecard
+- **Mô tả**: Đại diện dữ liệu chấm công của một nhân viên.
+- **Chức năng chính**:
+  - `new(date, employeeId)`: Tạo một thông tin chấm công mới.
+  - `makeReadable()`: Chuyển đổi dữ liệu để hiển thị dễ dàng.
+  - `makeEditable()`: Cho phép chỉnh sửa dữ liệu.
+  - `saveChanges(timecard)`: Lưu thay đổi vào cơ sở dữ liệu.
+- **Tương tác**:
+  - Được tạo và cập nhật thông qua **TimecardController**.
+
+---
+
+
